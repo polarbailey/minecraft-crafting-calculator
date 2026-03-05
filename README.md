@@ -1,5 +1,5 @@
 # minecraft-crafting-calculator
-Builders tool to help convert minecraft recipies into base components and convert large numbers into digestable minecraft numbers (shulkers, stacks, excess)
+**Builders tool to help convert minecraft recipies into base components and convert large numbers into digestable minecraft numbers (shulkers, stacks, excess)**
 
 This will have 3 features through 2 different user decision trees. The first one is what I am calling the Stack Converter. It will have you input the quantity of a block you need and it will convert that into easier to understand Minecraft terms. e.g. if you need 22160 cobblestone, this will output that you need 12 shulkers, 22 stacks, and 16 cobblestone.
 
