@@ -15,7 +15,7 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
     unsigned int stacks = remainder / 64;
     unsigned int excess = remainder % 64;
 
-    cout << "For" << itemAmount << " " << itemName << ", you will need " << endl;
+    cout << "For " << itemAmount << " " << itemName << ", you will need " << endl;
     if (shulkers > 0) {
         cout << shulkers;
         if (shulkers == 1) cout << " Shulker";
@@ -64,7 +64,7 @@ int main() {
             cout << "Goodbye!" << endl;
         }
         else {
-            cout << "I'm sorry, my database is limited. You must enter the right selection." << endl; // Cheeky I, Robot reference there. Shoutouts if you got it without this comment.
+            cout << "I'm sorry, my database is limited. You must enter the right selection." << endl << endl; // Cheeky I, Robot reference there. Shoutouts if you got it without this comment.
         } 
     } while (choice != "1" && choice != "stack" && choice != "2" && choice != "recipe" && choice != "0" && choice != "quit" && choice != "stop");
     
