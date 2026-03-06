@@ -61,7 +61,7 @@ int main() {
             cout << "This feature is currently under construction. Please check back later." << endl;
         }
         else if (choice == "0" || choice == "quit" || choice == "stop") {
-            cout << "Goodbye!";
+            cout << "Goodbye!" << endl;
         }
         else {
             cout << "I'm sorry, my database is limited. You must enter the right selection." << endl; // Cheeky I, Robot reference there. Shoutouts if you got it without this comment.
