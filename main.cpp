@@ -70,15 +70,27 @@ int main() {
             string again;
             do{
                 string itemName;
-                unsigned int itemAmount;
+                
 
                 cout << "What item are you converting? ";
                 cin.ignore();
                 getline(cin, itemName);
 
-                cout << "How much " << itemName << " are you converting? ";
-                cin >> itemAmount;
-
+                unsigned int itemAmount;
+                bool validInput = false;
+                do{
+                    cout << "How much " << itemName << " are you converting? ";
+                    cin >> itemAmount;
+                    if (cin.fail()) {
+                        cin.clear(); // clears the error flag
+                        cin.ignore(1000, '\n'); // discards the bad input from the buffer
+                        cout << "\nThat number is too large. Please enter a valid quantity." << endl << endl;
+                        continue; // loops back to the start of the do while
+                }
+                else { 
+                    validInput = true;
+                }
+            } while (!validInput);
                 displayQuantity(itemName, itemAmount);
                 cout << "\nNote: This tool is currently only accurate for items that stack into stacks of 64." << endl;
 
