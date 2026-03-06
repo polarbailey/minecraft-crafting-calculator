@@ -10,10 +10,11 @@ bool hasStonecutter = false;
 bool hasBadlands = false;
 
 void displayQuantity(string itemName, unsigned int itemAmount) {
-    unsigned int shulkers = itemAmount / 1728; // Shulker holds 27 full stacks. 27 * 64 is 1728
-    unsigned int remainder = itemAmount % 1728;
-    unsigned int stacks = remainder / 64;
-    unsigned int excess = remainder % 64;
+    unsigned int doubleChests = itemAmount / 93312; // 99312 = 54 shulkers full of stacks of items.
+    unsigned int shulkers = (itemAmount % 93312) / 1728; // Amount of full shulkers that don't completely fill a double chest
+    unsigned int remainder = itemAmount % 1728; // total items not filling a full shulker
+    unsigned int stacks = remainder / 64; // amount of full stacks that don't fill a full shulker
+    unsigned int excess = remainder % 64; // amount of loose items
 
     cout << "For " << itemAmount << " " << itemName << ", you will need " << endl;
     if (shulkers > 0) {
@@ -31,7 +32,7 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
     if (excess > 0) {
         cout << excess << " ";
     }
-    cout << "of " << itemName << "." << endl;
+    cout << itemName << "." << endl;
 }
 
 int main() {
@@ -56,6 +57,7 @@ int main() {
             cin >> itemAmount;
 
             displayQuantity(itemName, itemAmount);
+            cout << "\nNote: This tool is currently only accurate for items that stack into stacks of 64." << endl;
         }
         else if (choice == "2" || choice == "recipe") {
             cout << "This feature is currently under construction. Please check back later." << endl;
