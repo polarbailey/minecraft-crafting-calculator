@@ -104,7 +104,7 @@ int main() {
                     break;
                 }
                 if (again != "yes" && again != "y" && again != "no" && again != "n") {
-                    cout << "\nI'm sorry, my database is limited. You must enter the right selection." << endl;
+                    cout << "\nI'm sorry, my database is limited. You must enter the right selection." << endl; // this requires a proper selection rather than immediately going back to the main menu.
                 }
             } while (again != "yes" && again != "y" && again != "no" && again != "n" && again != "0" && again != "quit" && again != "stop");
         } while (again == "yes" || again == "y");
