@@ -19,18 +19,18 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
     unsigned int excess = remainder % 64; // amount of loose items
 
     cout << "For " << itemAmount << " " << itemName << ", you will need " << endl;
-    this_thread::sleep_for(chrono::milliseconds(500));
+    this_thread::sleep_for(chrono::milliseconds(416));
     cout << "\nConverting";
     cout.flush();
-    this_thread::sleep_for(chrono::milliseconds(500));
+    this_thread::sleep_for(chrono::milliseconds(417));
     for (int i = 0; i < 3; i++) {
         cout << " . ";
         cout.flush();
-        this_thread::sleep_for(chrono::milliseconds(500));
+        this_thread::sleep_for(chrono::milliseconds(417));
     }
-    cout << endl;
+    cout << endl << endl;
     if (doubleChests > 0) {
-        cout << "\n" << doubleChests;
+        cout << doubleChests;
         if (doubleChests == 1) cout << " Double Chest of Shulkers";
         else cout << " Double Chests of Shulkers";
         if (shulkers > 0 || stacks > 0 || excess > 0) cout << " + "; // this way there aren't erroneous "+" or other stuff if the math was clean whole numbers
@@ -59,7 +59,7 @@ int main() {
 
     while (running) {
     do {
-        cout << "Welcome to my Minecraft Converter. Please select an option: " << endl;
+        cout << "\nWelcome to my Minecraft Converter. Please select an option: " << endl;
         cout << "1. Stack Converter" << endl;
         cout << "2. Recipe Converter" << endl;
         cout << "0. Quit" << endl;
@@ -70,7 +70,6 @@ int main() {
             string again;
             do{
                 string itemName;
-                
 
                 cout << "What item are you converting? ";
                 cin.ignore();
@@ -91,18 +90,23 @@ int main() {
                     validInput = true;
                 }
             } while (!validInput);
+
                 displayQuantity(itemName, itemAmount);
                 cout << "\nNote: This tool is currently only accurate for items that stack into stacks of 64." << endl;
+                do {
+                    cout << "\nWould you like to convert something else? (yes/no): ";
+                    cin >> again;
+                    transform(again.begin(), again.end(), again.begin(), ::tolower);
 
-                cout << "\nWould you like to convert something else? (yes/no):";
-                cin >> again;
-                transform(again.begin(), again.end(), again.begin(), ::tolower);
-
-                if (again == "0" || again == "quit" || again == "stop") {
+                    if (again == "0" || again == "quit" || again == "stop") {
                     cout << "Goodbye!" << endl;
                     running = false;
                     break;
                 }
+                if (again != "yes" && again != "y" && again != "no" && again != "n") {
+                    cout << "\nI'm sorry, my database is limited. You must enter the right selection." << endl;
+                }
+            } while (again != "yes" && again != "y" && again != "no" && again != "n" && again != "0" && again != "quit" && again != "stop");
         } while (again == "yes" || again == "y");
     }
         else if (choice == "2" || choice == "recipe") {
