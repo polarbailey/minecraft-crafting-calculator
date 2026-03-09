@@ -23,7 +23,7 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
     cout << "\nConverting";
     cout.flush();
     this_thread::sleep_for(chrono::milliseconds(500));
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 3; i++) {
         cout << " . ";
         cout.flush();
         this_thread::sleep_for(chrono::milliseconds(500));
