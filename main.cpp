@@ -10,6 +10,7 @@ bool hasBamboo = false;
 bool hasSilkTouch = false;
 bool hasStonecutter = false;
 bool hasBadlands = false;
+bool hasNether = false;
 
 void displayQuantity(string itemName, unsigned int itemAmount) {
     unsigned int doubleChests = itemAmount / 93312; // 99312 = 54 shulkers full of stacks of items.
