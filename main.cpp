@@ -95,9 +95,11 @@ int main() {
         cout << "\nWelcome to my Minecraft Converter. Please select an option: " << endl;
         cout << "1. Stack Converter" << endl;
         cout << "2. Recipe Converter" << endl;
+        cout << "3. Directory" << endl;
         cout << "0. Quit" << endl;
         cin >> choice;
         transform(choice.begin(), choice.end(), choice.begin(), ::tolower);
+        // TODO: CODE IN A GLOBAL QUIT FUNCTION SO THAT YOU CAN SAY STOP OR QUIT AT ANYTIME TO END THE PROGRAM NOT JUST AT THE MAIN MENU
 
         if (choice == "1" || choice == "stack") {
             string again;
@@ -145,6 +147,9 @@ int main() {
         else if (choice == "2" || choice == "recipe") {
             cout << "This feature is currently under construction. Please check back later." << endl;
         }
+        else if (choice == "3" || choice == "directory") {
+            
+        }
         else if (choice == "0" || choice == "quit" || choice == "stop") {
             cout << "Goodbye!" << endl << endl;
             running = false;
@@ -152,7 +157,7 @@ int main() {
         else {
             cout << "I'm sorry, my database is limited. You must enter the right selection." << endl << endl; // Cheeky I, Robot reference there. Shoutouts if you got it without this comment.
         } 
-    } while (choice != "1" && choice != "stack" && choice != "2" && choice != "recipe" && choice != "0" && choice != "quit" && choice != "stop");
+    } while (choice != "1" && choice != "stack" && choice != "2" && choice != "recipe" && choice != "3" && choice != "directory" && choice != "0" && choice != "quit" && choice != "stop");
     }
     return 0;
 }
