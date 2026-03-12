@@ -54,6 +54,38 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
     cout << itemName << "." << endl;
 }
 
+void displayDirectory(string items[], int itemCount, string categoryName){
+    int totalPages = (itemCount + 4) / 5;
+    int currentPage = 1;
+    if(totalPages == 1){
+        // A single page, so no need for a Next or Prev Page option
+    }
+    else if(currentPage == 1){
+        cout << "N. Next Page" << endl;
+    }
+    else if(currentPage == totalPages){
+        cout << "P. Prev Page" << endl;
+    }
+    else{
+        cout << "P. Prev Page" << endl << "N. Next Page" << endl;
+    }
+}
+void directoryBaseItems(){
+
+}
+void directorySingleCrafts(){
+
+}
+void directoryMultiCrafts(){
+
+}
+void directorySmelts(){
+
+}
+void directoryObtainables(){
+
+}
+
 int main() {
     string choice;
     bool running = true;
