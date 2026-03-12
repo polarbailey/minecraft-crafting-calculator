@@ -57,21 +57,93 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
 void displayDirectory(string items[], int itemCount, string categoryName){
     int totalPages = (itemCount + 4) / 5;
     int currentPage = 1;
-    if(totalPages == 1){
+    string navigate;
+
+    do{
+        cout << categoryName << ": Page " << currentPage << " of " << totalPages << endl;
+        int startIndex = (currentPage - 1) * 5;
+        int i;
+        for (i = startIndex; i < min(startIndex + 5, itemCount); i++)
+            cout << (i+1) << ". " << items[i] << endl;
+        if(totalPages == 1){
         // A single page, so no need for a Next or Prev Page option
-    }
-    else if(currentPage == 1){
-        cout << "N. Next Page" << endl;
-    }
-    else if(currentPage == totalPages){
-        cout << "P. Prev Page" << endl;
-    }
-    else{
-        cout << "P. Prev Page" << endl << "N. Next Page" << endl;
-    }
+        }
+        else if(currentPage == 1){
+            cout << "N. Next Page" << endl;
+        }
+        else if(currentPage == totalPages){
+            cout << "P. Prev Page" << endl;
+        }
+        else{
+            cout << "P. Prev Page" << endl << "N. Next Page" << endl;
+        }
+        cout << "B. Back to Main Menu" << endl;
+        cin >> navigate;
+        transform(navigate.begin(), navigate.end(), navigate.begin(), ::tolower);
+
+        if (navigate == "n" || navigate == "next"){
+            if(currentPage == totalPages){
+                cout << "This is the last page." << endl;
+            }
+            else{
+                currentPage++;
+            }
+        }
+        else if(navigate == "p" || navigate == "prev" || navigate == "previous"){
+            if(currentPage == 1){
+                cout << "This is the first page." << endl;
+            }
+            else{
+                currentPage--;
+            }
+        }
+        else{
+            cout << "I'm sorry, my database is limited. You must enter the right selection." << endl << endl;
+        }
+
+    } while(navigate != "b" && navigate != "back");
 }
 void directoryBaseItems(){
-
+    string items[] = {
+        "Amethyst Shard",
+        "Bamboo",
+        "Basalt",
+        "Blaze Rod",
+        "Bone",
+        "Bone Block - Requires Nether access",
+        "Clay Ball",
+        "Clay Block - Requires Silk Touch",
+        "Coal",
+        "Cobblestone",
+        "Copper Ingot",
+        "Copper Nugget",
+        "Diamond",
+        "Dye (No distinct colors, all are just under Dye)",
+        "Flint",
+        "Glass - Requires Silk Touch or Smelting",
+        "Glowstone - Requires Silk Touch",
+        "Glowstone Dust",
+        "Gold Ingot",
+        "Gravel",
+        "Gunpowder",
+        "Iron Ingot",
+        "Iron Nugget",
+        "Leather",
+        "Log (Doesn't differentiate wood types)",
+        "Nether Quartz",
+        "Netherrack",
+        "Redstone Dust",
+        "Sand",
+        "Sandstone",
+        "Shulker Shell",
+        "Slimeball",
+        "Stone - Requires Silk Touch or Smelting",
+        "String",
+        "Sugar Cane",
+        "Wheat",
+        "Wool"
+    };
+    displayDirectory(items, 37, "Base Items");
 }
 void directorySingleCrafts(){
 
@@ -88,6 +160,7 @@ void directoryObtainables(){
 
 int main() {
     string choice;
+    string selection;
     bool running = true;
 
     while (running) {
@@ -148,7 +221,44 @@ int main() {
             cout << "This feature is currently under construction. Please check back later." << endl;
         }
         else if (choice == "3" || choice == "directory") {
-            
+            do {
+                cout << "\nWelcome to the Item Directory. Which Category do you want to see?" << endl;
+                cout << "1. Base Items" << endl;
+                cout << "2. Smelting" << endl;
+                cout << "3. Obtainables" << endl;
+                cout << "4. Single Crafts" << endl;
+                cout << "5. Multi-Crafts" << endl;
+                cout << "6. Back to Main Menu" << endl;
+                cout << "0. Quit" << endl;
+                cin >> selection;
+                transform(selection.begin(), selection.end(), selection.begin(), ::tolower);
+
+                if (selection == "1" || selection == "base") {
+                    directoryBaseItems();
+                }
+                else if (selection == "2" || selection == "smelt" || selection == "smelting") {
+                    cout << "\nThis is currently under construction. Please check back later." << endl;
+                }
+                else if (selection == "3" || selection == "obtainable" || selection == "obtainables"){
+                    cout << "\nThis is currently under construction. Please check back later." << endl;
+                }
+                else if (selection == "4" || selection == "single"){
+                    cout << "\nThis is currently under construction. Please check back later." << endl;
+                }
+                else if (selection == "5" || selection == "multi"){
+                    cout << "\nThis is currently under construction. Please check back later." << endl;
+                }
+                else if (selection == "6" || selection == "back"){
+                    break;
+                }
+                else if (selection == "0" || selection== "quit" || selection == "stop") {
+                    cout << "Goodbye!" << endl << endl;
+                    running = false;
+                }
+                else{
+                    cout << "I'm sorry, my database is limited. You must enter the right selection. Double check that you only entered in the number or first word of your menu selection." << endl << endl;
+                }
+            } while (selection != "1" && selection != "base" && selection != "2" && selection != "smelting" && selection != "smelt" && selection != "3" && selection != "obtainable" && selection != "obtainables" && selection != "4" && selection != "single" && selection != "5" && selection != "multi" && selection != "6" && selection != "back" && selection != "0" && selection != "quit" && selection != "stop");
         }
         else if (choice == "0" || choice == "quit" || choice == "stop") {
             cout << "Goodbye!" << endl << endl;
