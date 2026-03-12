@@ -97,6 +97,9 @@ void displayDirectory(string items[], int itemCount, string categoryName){
                 currentPage--;
             }
         }
+        else if( navigate == "b" || navigate == "back"){
+            // this line was intentionally left blank.
+        }
         else{
             cout << "I'm sorry, my database is limited. You must enter the right selection." << endl << endl;
         }
