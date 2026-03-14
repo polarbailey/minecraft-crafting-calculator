@@ -230,7 +230,14 @@ void directorySmelts(){
     displayDirectory (items, 9, "Smelting Recipes");
 }
 void directoryObtainables(){
-
+    string items[] {
+        "Honey Bottle -> Bee Nest/Beehive + Glass Bottle.",
+        "Honeycomb -> Bee Nest/Beehive + Shears",
+        "Lava Bucket -> Lava Source + Bucket",
+        "Water Bottle -> Water Source + Glass Bottle",
+        "Water Bucket -> Water Source + Bucket"
+    };
+    displayDirectory (items, 5, "Obtainables");
 }
 
 int main() {
@@ -315,7 +322,7 @@ int main() {
                     directorySmelts();
                 }
                 else if (selection == "3" || selection == "obtainable" || selection == "obtainables"){
-                    cout << "\nThis is currently under construction. Please check back later." << endl;
+                    directoryObtainables();
                 }
                 else if (selection == "4" || selection == "single"){
                     directorySingleCrafts();
