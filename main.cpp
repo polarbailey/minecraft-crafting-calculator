@@ -149,7 +149,68 @@ void directoryBaseItems(){
     displayDirectory(items, 37, "Base Items");
 }
 void directorySingleCrafts(){
-
+    string items[] = {
+        "Bamboo Block",
+        "Blaze Powder",
+        "Bonemeal",
+        "Brewing Stand",
+        "Bucket",
+        "Bundle",
+        "Cauldron",
+        "Chiseled Sandtone - Can be made with Stonecutter",
+        "Chiseled Stone Brick - Can be made with Stonecutter",
+        "Clay Block",
+        "Coal Block",
+        "Cobblestone Slab - Can be made with Stonecutter",
+        "Cobblestone Stair - Can be made with Stonecutter",
+        "Cobblestone Wall - Can be made with Stonecutter",
+        "Compass",
+        "Concrete Powder",
+        "Copper Bars",
+        "Copper Block",
+        "Copper Nugget",
+        "Copper Trapdoor",
+        "Cut Sandstone - Can be made with Stonecutter",
+        "Cut Sandstone Slab - Can be made with Stonecutter",
+        "Dropper",
+        "Furnace",
+        "Glass Bottle",
+        "Glowstone",
+        "Gold Block",
+        "Hay Bale",
+        "Heavy Weighted Pressure Plate",
+        "Iron Bars",
+        "Iron Block",
+        "Iron Door",
+        "Iron Ingot",
+        "Iron Nugget",
+        "Iron Trapdoor",
+        "Lead",
+        "Light Weighted Pressure Plate",
+        "Lightning Rod",
+        "Minecart",
+        "Paper",
+        "Planks (Wood type not differentiated)",
+        "Redstone Block",
+        "Sandstone",
+        "Sandstone Slab - Can be made with Stonecutter",
+        "Sandstone Stair - Can be made with Stonecutter",
+        "Sandstone Wall - Can be made with Stonecutter",
+        "Shears",
+        "Slime Block",
+        "Stick (When you have access to Bamboo)",
+        "Stone Brick - Can be made with Stonecutter",
+        "Stone Brick Slab - Can be made with Stonecutter",
+        "Stone Brick Stair - Can be made with Stonecutter",
+        "Stone Brick Wall - Can be made with Stonecutter",
+        "Stone Pressure Plate",
+        "Stone Slab - Can be made with Stonecutter",
+        "Stone Stair - Can be made with Stonecutter",
+        "Stonecutter",
+        "Sugar",
+        "Wool"
+    };
+    displayDirectory (items, 59, "Single Crafts");
 }
 void directoryMultiCrafts(){
 
@@ -246,7 +307,7 @@ int main() {
                     cout << "\nThis is currently under construction. Please check back later." << endl;
                 }
                 else if (selection == "4" || selection == "single"){
-                    cout << "\nThis is currently under construction. Please check back later." << endl;
+                    directorySingleCrafts();
                 }
                 else if (selection == "5" || selection == "multi"){
                     cout << "\nThis is currently under construction. Please check back later." << endl;
