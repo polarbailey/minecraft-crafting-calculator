@@ -213,10 +213,21 @@ void directorySingleCrafts(){
     displayDirectory (items, 59, "Single Crafts");
 }
 void directoryMultiCrafts(){
-
+    
 }
 void directorySmelts(){
-
+    string items[] {
+        "Clay Ball -> Brick",
+        "Clay Block -> Terracotta",
+        "Cobblestone -> Stone",
+        "Log -> Charcoal",
+        "Sand -> Glass",
+        "Netherrack -> Nether Brick",
+        "Basalt -> Smooth Basalt",
+        "Sandstone -> Smooth Sandstone",
+        "Stone -> Smooth Stone"
+    };
+    displayDirectory (items, 9, "Smelting Recipes");
 }
 void directoryObtainables(){
 
@@ -301,7 +312,7 @@ int main() {
                     directoryBaseItems();
                 }
                 else if (selection == "2" || selection == "smelt" || selection == "smelting") {
-                    cout << "\nThis is currently under construction. Please check back later." << endl;
+                    directorySmelts();
                 }
                 else if (selection == "3" || selection == "obtainable" || selection == "obtainables"){
                     cout << "\nThis is currently under construction. Please check back later." << endl;
