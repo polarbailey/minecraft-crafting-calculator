@@ -51,7 +51,10 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
     if (excess > 0) {
         cout << excess << " ";
     }
-    cout << itemName << "." << endl;
+    if (excess == 0) {
+        cout << " of";
+    }
+    cout << " " << itemName << "." << endl;
 }
 
 void displayDirectory(string items[], int itemCount, string categoryName){
