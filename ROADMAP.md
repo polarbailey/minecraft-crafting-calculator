@@ -2,7 +2,7 @@
 **3/9/26**
 - [x] *added 3/9/26* Add an artificial delay for calculations (studies show it produces higher confidence in results)
 - [x] *added 3/9/26* convert to 3 full branches: 1 for school, 1 for development after school is finished, and 1 official release
-- [x] Add a Directory so users can know what items are used in the program
+- [x] *added 3/14/26* Add a Directory so users can know what items are used in the program
 - [ ] Update from just "wood, stone, cobble" to actual wood and stone types including granite, andesite, etc. *(Post School Feature)*
 
  **3/10/26**
