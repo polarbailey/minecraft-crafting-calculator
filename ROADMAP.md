@@ -2,23 +2,38 @@
 **3/9/26**
 - [x] *added 3/9/26* Add an artificial delay for calculations (studies show it produces higher confidence in results)
 - [x] *added 3/9/26* convert to 3 full branches: 1 for school, 1 for development after school is finished, and 1 official release
-- [ ] Add a Directory so users can know what items are used in the program
+- [x] *added 3/14/26* Add a Directory so users can know what items are used in the program
 - [ ] Update from just "wood, stone, cobble" to actual wood and stone types including granite, andesite, etc. *(Post School Feature)*
 
  **3/10/26**
  - [x] *added 3/12/26* Figure out all conditional settings to allow user to change (Already have stonecutter, silk touch, and badlands)
 
 **3/12/26** 
-- [ ] Update Stack Converter to differentiate between items that stack to 64, items that stack to 16, and items that are unstackable. *(Post School Feature)*
+- [ ] Update Stack Converter to differentiate between items that stack to 64, items that stack to 16, and items that are unstackable. ~~*(Post School Feature)*~~ (actually planning on adding this in for the school project.)
 - ❌️ ~~create a search feature in the directory~~ (removed from roadmap as I don't yet know how/if i'd want to implement it in the base code, or in whatever GUI I add later.
 - [ ] Create a GUI so that the program isn't just used in the terminal
 
 **3/14/26**
 - [ ] Add Disparity for Java vs. Bedrock (Certain recipes are slightly different between versions. e.g. stonecutter can use any stone type in Bedrock, not just "Stone")
 - [x] *added 3/14/26* Start Roadmap document
-- [ ] refine Stack converter to Double Chests of Shulkers, Chests of Shulkers, Shulkers, Stacks, and Excess
+- [ ] refine Stack converter to Double Chests of Shulkers, Chests of Shulkers, Shulkers, Stacks, and Excess *(Post School Feature)*
 - [ ] Add Multi-Craft Sum conversions (The ability to get a combination of all Raw materials for multiple different recipes in one usage of the program. e.g. getting 1 combined result for making say 100 pistons, 45 Redstone Comparators, 95 hoppers, 42 chests, and 30 copper bars *(Post School Feature)*
+- [ ] finish setting up recipe converter logic for crafts
+- [ ] Connect recipe converter to stack converter
+- [ ] Set up database for what times stack in what quantities (64, 16, 1)
+- [ ] Figure out the scope of the additions for full release (will i go past 26.0? So far the definite answer for newest item to be added later is Golden Dandelion)
 
+***VERSION ITENERARY POST V1.0***
+- [ ] v1.0 Final School Submission
+- [ ] v1.1 Structure aware Stack Conversion (checking actual stack size of items converting for whether its x64, x16, or x1)
+- [ ] v1.2 Add all wood variants (oak, birch, crimson, etc.)
+- [ ] v1.3 Add Stone Variants (Blackstone and Deepslate)
+- [ ] v1.4 Add Extra Stone (Granite, andesite, diorite, etc.)
+- [ ] v1.5 Add "Decoration" Blocks (ones that don't necessarily serve a function, just for building)
+- [ ] v1.6-1.7 Unknown currently (buffer for final pre 2.0 testing)
+- [ ] v1.8 Send to WebAssembly for testing Web-based UI
+- [ ] v1.9 Final UI testing
+- [ ] v2.0 Full Web Based application with GUI included
 
 I wanted to make this Roadmap as I started figuring out what features I wanted to give this program, both for my school submission and also for the features I plan on adding after I submit my assignment, because I'll have more time for focusing on the project and not be constrained by my 8 week(ish) timeline.
 It is 3/14/26 and I will be using my commits to try to build the timeline from before I made this ROADMAP as well as keeping it up to date as much as I can. 
