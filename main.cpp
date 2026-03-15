@@ -60,7 +60,7 @@ void displayDirectory(string items[], int itemCount, string categoryName){
     string navigate;
 
     do{
-        cout << categoryName << ": Page " << currentPage << " of " << totalPages << endl;
+        cout << endl << categoryName << ": Page " << currentPage << " of " << totalPages << endl;
         int startIndex = (currentPage - 1) * 5;
         int i;
         for (i = startIndex; i < min(startIndex + 5, itemCount); i++)
@@ -69,13 +69,13 @@ void displayDirectory(string items[], int itemCount, string categoryName){
         // A single page, so no need for a Next or Prev Page option
         }
         else if(currentPage == 1){
-            cout << "N. Next Page" << endl;
+            cout << "\nN. Next Page" << endl;
         }
         else if(currentPage == totalPages){
-            cout << "P. Prev Page" << endl;
+            cout << "\nP. Prev Page" << endl;
         }
         else{
-            cout << "P. Prev Page" << endl << "N. Next Page" << endl;
+            cout << "\nP. Prev Page" << endl << "N. Next Page" << endl;
         }
         cout << "B. Back to Main Menu" << endl;
         cin >> navigate;
@@ -235,6 +235,7 @@ void directoryMultiCrafts(){
         "Copper Bulb",
         "Copper Chain",
         "Copper Grate - Better with Stonecutter",
+        "Copper Ingot",
         "Crafter",
         "Crafting Table",
         "Cut Copper Block - Better with Stonecutter",
@@ -249,43 +250,42 @@ void directoryMultiCrafts(){
         "Fletching Table",
         "Glass Panes",
         "Grindstone",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        "",
-        ""
+        "Honey Block",
+        "Hopper",
+        "Hopper Minecart",
+        "Iron Chain",
+        "Jukebox",
+        "Ladder",
+        "Lectern",
+        "Lever",
+        "Lodestone",
+        "Loom",
+        "Note Block",
+        "Observer",
+        "Piston",
+        "Powered Rail",
+        "Rail",
+        "Redstone Comparator",
+        "Redstone Repeater",
+        "Redstone Torch",
+        "Scaffolding",
+        "Shield",
+        "Shulker Box",
+        "Sign",
+        "Smithing Table",
+        "Smoker",
+        "Stained Glass",
+        "Stained Glass Panes",
+        "Stick",
+        "Sticky Piston",
+        "Target Block",
+        "Tinted Glass",
+        "TNT",
+        "Tripwire Hook",
+        "Wooden Pressure Plate",
+        "Wooden Slab",
+        "Wooden Stair",
+        "Wooden Trapdoor"
     };
     displayDirectory (items, 72, "Multi-Crafts");
 }
@@ -402,7 +402,7 @@ int main() {
                     directorySingleCrafts();
                 }
                 else if (selection == "5" || selection == "multi"){
-                    cout << "\nThis is currently under construction. Please check back later." << endl;
+                    directoryMultiCrafts();
                 }
                 else if (selection == "6" || selection == "back"){
                     break;
