@@ -9,15 +9,19 @@
  - [x] *added 3/12/26* Figure out all conditional settings to allow user to change (Already have stonecutter, silk touch, and badlands)
 
 **3/12/26** 
-- [ ] Update Stack Converter to differentiate between items that stack to 64, items that stack to 16, and items that are unstackable. *(Post School Feature)*
+- [ ] Update Stack Converter to differentiate between items that stack to 64, items that stack to 16, and items that are unstackable. ~~*(Post School Feature)*~~ (actually planning on adding this in for the school project.)
 - ❌️ ~~create a search feature in the directory~~ (removed from roadmap as I don't yet know how/if i'd want to implement it in the base code, or in whatever GUI I add later.
 - [ ] Create a GUI so that the program isn't just used in the terminal
 
 **3/14/26**
 - [ ] Add Disparity for Java vs. Bedrock (Certain recipes are slightly different between versions. e.g. stonecutter can use any stone type in Bedrock, not just "Stone")
 - [x] *added 3/14/26* Start Roadmap document
-- [ ] refine Stack converter to Double Chests of Shulkers, Chests of Shulkers, Shulkers, Stacks, and Excess
+- [ ] refine Stack converter to Double Chests of Shulkers, Chests of Shulkers, Shulkers, Stacks, and Excess *(Post School Feature)*
 - [ ] Add Multi-Craft Sum conversions (The ability to get a combination of all Raw materials for multiple different recipes in one usage of the program. e.g. getting 1 combined result for making say 100 pistons, 45 Redstone Comparators, 95 hoppers, 42 chests, and 30 copper bars *(Post School Feature)*
+- [ ] finish setting up recipe converter logic for crafts
+- [ ] Connect recipe converter to stack converter
+- [ ] Set up database for what times stack in what quantities (64, 16, 1)
+- [ ] Figure out the scope of the additions for full release (will i go past 26.0? So far the definite answer for newest item to be added later is Golden Dandelion)
 
 
 I wanted to make this Roadmap as I started figuring out what features I wanted to give this program, both for my school submission and also for the features I plan on adding after I submit my assignment, because I'll have more time for focusing on the project and not be constrained by my 8 week(ish) timeline.
