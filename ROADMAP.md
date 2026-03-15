@@ -23,6 +23,17 @@
 - [ ] Set up database for what times stack in what quantities (64, 16, 1)
 - [ ] Figure out the scope of the additions for full release (will i go past 26.0? So far the definite answer for newest item to be added later is Golden Dandelion)
 
+***VERSION ITENERARY POST V1.0***
+- [ ] v1.0 Final School Submission
+- [ ] v1.1 Structure aware Stack Conversion (checking actual stack size of items converting for whether its x64, x16, or x1)
+- [ ] v1.2 Add all wood variants (oak, birch, crimson, etc.)
+- [ ] v1.3 Add Stone Variants (Blackstone and Deepslate)
+- [ ] v1.4 Add Extra Stone (Granite, andesite, diorite, etc.)
+- [ ] v1.5 Add "Decoration" Blocks (ones that don't necessarily serve a function, just for building)
+- [ ] v1.6-1.7 Unknown currently (buffer for final pre 2.0 testing)
+- [ ] v1.8 Send to WebAssembly for testing Web-based UI
+- [ ] v1.9 Final UI testing
+- [ ] v2.0 Full Web Based application with GUI included
 
 I wanted to make this Roadmap as I started figuring out what features I wanted to give this program, both for my school submission and also for the features I plan on adding after I submit my assignment, because I'll have more time for focusing on the project and not be constrained by my 8 week(ish) timeline.
 It is 3/14/26 and I will be using my commits to try to build the timeline from before I made this ROADMAP as well as keeping it up to date as much as I can. 
