@@ -57,10 +57,9 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
     cout << " " << itemName << "." << endl;
 }
 
-void displayDirectory(string items[], int itemCount, string categoryName){
+void displayDirectory(string items[], int itemCount, string categoryName, string& navigate){
     int totalPages = (itemCount + 4) / 5;
     int currentPage = 1;
-    string navigate;
 
     do{
         cout << endl << categoryName << ": Page " << currentPage << " of " << totalPages << endl;
@@ -80,6 +79,7 @@ void displayDirectory(string items[], int itemCount, string categoryName){
         else{
             cout << "\nP. Prev Page" << endl << "N. Next Page" << endl;
         }
+        cout << "D. Directory Menu" << endl;
         cout << "B. Back to Main Menu" << endl;
         cin >> navigate;
         transform(navigate.begin(), navigate.end(), navigate.begin(), ::tolower);
@@ -100,16 +100,19 @@ void displayDirectory(string items[], int itemCount, string categoryName){
                 currentPage--;
             }
         }
-        else if( navigate == "b" || navigate == "back"){
+        else if (navigate == "d" || navigate == "directory"){
+
+        }
+        else if (navigate == "b" || navigate == "back"){
             // this line was intentionally left blank.
         }
         else{
             cout << "I'm sorry, my database is limited. You must enter the right selection." << endl << endl;
         }
 
-    } while(navigate != "b" && navigate != "back");
+    } while(navigate != "b" && navigate != "back" && navigate != "d" && navigate != "directory");
 }
-void directoryBaseItems(){
+void directoryBaseItems(string& navigate){
     string items[] = {
         "Amethyst Shard",
         "Bamboo",
@@ -149,9 +152,9 @@ void directoryBaseItems(){
         "Wheat",
         "Wool"
     };
-    displayDirectory(items, 37, "Base Items");
+    displayDirectory(items, 37, "Base Items", navigate);
 }
-void directorySingleCrafts(){
+void directorySingleCrafts(string& navigate){
     string items[] = {
         "Bamboo Block",
         "Blaze Powder",
@@ -213,9 +216,9 @@ void directorySingleCrafts(){
         "Sugar",
         "Wool"
     };
-    displayDirectory (items, 59, "Single Crafts");
+    displayDirectory (items, 59, "Single Crafts", navigate);
 }
-void directoryMultiCrafts(){
+void directoryMultiCrafts(string& navigate){
     string items [] {
         "Activator Rail",
         "Anvil",
@@ -290,9 +293,9 @@ void directoryMultiCrafts(){
         "Wooden Stair",
         "Wooden Trapdoor"
     };
-    displayDirectory (items, 72, "Multi-Crafts");
+    displayDirectory (items, 72, "Multi-Crafts", navigate);
 }
-void directorySmelts(){
+void directorySmelts(string& navigate){
     string items[] {
         "Clay Ball -> Brick",
         "Clay Block -> Terracotta",
@@ -304,9 +307,9 @@ void directorySmelts(){
         "Sandstone -> Smooth Sandstone",
         "Stone -> Smooth Stone"
     };
-    displayDirectory (items, 9, "Smelting Recipes");
+    displayDirectory (items, 9, "Smelting Recipes", navigate);
 }
-void directoryObtainables(){
+void directoryObtainables(string& navigate){
     string items[] {
         "Honey Bottle -> Bee Nest/Beehive + Glass Bottle.",
         "Honeycomb -> Bee Nest/Beehive + Shears",
@@ -314,12 +317,13 @@ void directoryObtainables(){
         "Water Bottle -> Water Source + Glass Bottle",
         "Water Bucket -> Water Source + Bucket"
     };
-    displayDirectory (items, 5, "Obtainables");
+    displayDirectory (items, 5, "Obtainables", navigate);
 }
 
 int main() {
     string choice;
     string selection;
+    string navigate;
     bool running = true;
 
     while (running) {
@@ -393,19 +397,29 @@ int main() {
                 transform(selection.begin(), selection.end(), selection.begin(), ::tolower);
 
                 if (selection == "1" || selection == "base") {
-                    directoryBaseItems();
+                    directoryBaseItems(navigate);
+                    if (navigate == "b" || navigate == "back") break;
+                    selection = "";
                 }
                 else if (selection == "2" || selection == "smelt" || selection == "smelting") {
-                    directorySmelts();
+                    directorySmelts(navigate);
+                    if (navigate == "b" || navigate == "back") break;
+                    selection = "";
                 }
                 else if (selection == "3" || selection == "obtainable" || selection == "obtainables"){
-                    directoryObtainables();
+                    directoryObtainables(navigate);
+                    if (navigate == "b" || navigate == "back") break;
+                    selection = "";
                 }
                 else if (selection == "4" || selection == "single"){
-                    directorySingleCrafts();
+                    directorySingleCrafts(navigate);
+                    if (navigate == "b" || navigate == "back") break;
+                    selection = "";
                 }
                 else if (selection == "5" || selection == "multi"){
-                    directoryMultiCrafts();
+                    directoryMultiCrafts(navigate);
+                    if (navigate == "b" || navigate == "back") break;
+                    selection = "";
                 }
                 else if (selection == "6" || selection == "back"){
                     break;
