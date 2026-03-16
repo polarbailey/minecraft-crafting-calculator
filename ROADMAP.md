@@ -23,7 +23,7 @@
 - [ ] Set up database for what times stack in what quantities (64, 16, 1)
 - [ ] Figure out the scope of the additions for full release (will i go past 26.0? So far the definite answer for newest item to be added later is Golden Dandelion)
 
-** 3/15/26**
+**3/15/26**
 - [ ] enum StackSize { SINGLE = 1, SIXTEEN = 16, SIXTY_FOUR = 64 } *(Post School Feature)*
 - [ ] Add stackSize field to Recipe struct
 - [ ] Update stack converter math to use stackSize instead of hardcoded 64 *(Post School Feature)*
