@@ -12,6 +12,7 @@ bool hasSilkTouch = false;
 bool hasStonecutter = false;
 bool hasBadlands = false;
 bool hasNether = false;
+bool hasBees = false;
 
 enum StackSize{
     SIXTY_FOUR = 64,
@@ -28,11 +29,12 @@ struct Recipe {
     Ingredient ingredients[9];
     int ingredientCount;
     unsigned int yieldAmount;
-    bool requiresBadlands;
-    bool requiresBamboo;
-    bool requiresNether;
-    bool requiresSilkTouch;
-    bool requiresStonecutter;
+    bool requiresBadlands = false;
+    bool requiresBamboo = false;
+    bool requiresNether = false;
+    bool requiresSilkTouch = false;
+    bool requiresStonecutter = false;
+    bool isSmelt = false;
     StackSize stackSize;
 };
 struct BaseItem {
@@ -42,6 +44,7 @@ struct BaseItem {
     bool requiresBamboo = false;
     bool requiresBadlands = false;
     bool requiresNether = false;
+    bool requiresBees = false;
 };
 
 vector<Recipe> recipes;
@@ -93,6 +96,8 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
 }
 
 void populateRecipes(){
+    Recipe recipe;
+
 
 }
 
@@ -191,6 +196,16 @@ void populateBaseItems(){
     item.name = "Gunpowder";
     item.stackSize = SIXTY_FOUR;
     baseItems.push_back(item);
+
+    item.name = "Honey Bottle";
+    item.stackSize = SIXTEEN;
+    item.requiresBees = true;
+    baseItems.push_back(item);
+
+    item.name = "Honeycomb";
+    item.stackSize = SIXTY_FOUR;
+    item.requiresBees = true;
+    baseItems.push_back(item);
     
     item.name = "Iron Ingot";
     item.stackSize = SIXTY_FOUR;
@@ -259,6 +274,92 @@ void populateBaseItems(){
     baseItems.push_back(item);
     
 }
+
+void populateSmelts(){
+    Recipe recipe;
+
+    recipe.name = "Brick";
+    recipe.ingredients[0].name = "Clay Ball";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Charcoal";
+    recipe.ingredients[0].name = "Log";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Glass";
+    recipe.ingredients[0].name = "Sand";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Nether Brick";
+    recipe.ingredients[0].name = "Netherrack";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Smooth Basalt";
+    recipe.ingredients[0].name = "Basalt";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Smooth Sandstone";
+    recipe.ingredients[0].name = "Sandstone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Smooth Stone";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Terracotta";
+    recipe.ingredients[0].name = "Clay Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.isSmelt = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+};
 
 void displayDirectory(string items[], int itemCount, string categoryName, string& navigate){
     int totalPages = (itemCount + 4) / 5;
@@ -529,6 +630,7 @@ int main() {
 
     populateRecipes();
     populateBaseItems();
+    populateSmelts();
 
     string choice;
     string selection;
