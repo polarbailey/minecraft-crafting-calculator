@@ -23,6 +23,12 @@
 - [ ] Set up database for what times stack in what quantities (64, 16, 1)
 - [ ] Figure out the scope of the additions for full release (will i go past 26.0? So far the definite answer for newest item to be added later is Golden Dandelion)
 
+**3/15/26**
+- [ ] enum StackSize { SINGLE = 1, SIXTEEN = 16, SIXTY_FOUR = 64 } *(Post School Feature)*
+- [ ] Add stackSize field to Recipe struct
+- [ ] Update stack converter math to use stackSize instead of hardcoded 64 *(Post School Feature)*
+- [ ] Update displayQuantity() to reflect correct stack sizes per item *(Post School Feature)*
+
 ***VERSION ITENERARY POST V1.0***
 - [ ] v1.0 Final School Submission
 - [ ] v1.1 Structure aware Stack Conversion (checking actual stack size of items converting for whether its x64, x16, or x1)
