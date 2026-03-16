@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <thread>
 #include <chrono>
+#include <vector>
 
 using namespace std;
 
@@ -11,6 +12,40 @@ bool hasSilkTouch = false;
 bool hasStonecutter = false;
 bool hasBadlands = false;
 bool hasNether = false;
+
+enum StackSize{
+    SIXTY_FOUR = 64,
+    SIXTEEN = 16,
+    SINGLE = 1
+};
+
+struct Ingredient {
+    string name;
+    unsigned int quantity;
+};
+struct Recipe {
+    string name;
+    Ingredient ingredients[9];
+    int ingredientCount;
+    unsigned int yieldAmount;
+    bool requiresBadlands;
+    bool requiresBamboo;
+    bool requiresNether;
+    bool requiresSilkTouch;
+    bool requiresStonecutter;
+    StackSize stackSize;
+};
+struct BaseItem {
+    string name;
+    StackSize stackSize;
+    bool requiresSilkTouch = false;
+    bool requiresBamboo = false;
+    bool requiresBadlands = false;
+    bool requiresNether = false;
+};
+
+vector<Recipe> recipes;
+vector<BaseItem> baseItems;
 
 void displayQuantity(string itemName, unsigned int itemAmount) {
     unsigned int doubleChests = itemAmount / 93312; // 99312 = 54 shulkers full of stacks of items.
@@ -55,6 +90,174 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
         cout << " of";
     }
     cout << " " << itemName << "." << endl;
+}
+
+void populateRecipes(){
+
+}
+
+void populateBaseItems(){
+    BaseItem item;
+
+    item.name = "Amethyst Shard";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+
+    item.name = "Bamboo";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+
+    item.name = "Basalt";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Blaze Rod";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Bone";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Bone Block";
+    item.stackSize = SIXTY_FOUR;
+    item.requiresNether = true;
+    baseItems.push_back(item);
+    
+    item.name = "Clay Ball";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Clay Block";
+    item.stackSize = SIXTY_FOUR;
+    item.requiresSilkTouch = true;
+    baseItems.push_back(item);
+    
+    item.name = "Coal";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Cobblestone";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Copper Ingot";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Copper Nugget";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Diamond";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Dye";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    /*This will eventually be expanded to all 16 colors as well as their recipes to craft them*/
+    
+    item.name = "Ender Pearl";
+    item.stackSize = SIXTEEN;
+    baseItems.push_back(item);
+    
+    item.name = "Flint";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Glass";
+    item.stackSize = SIXTY_FOUR;
+    item.requiresSilkTouch = true;
+    baseItems.push_back(item);
+    
+    item.name = "Glowstone";
+    item.stackSize = SIXTY_FOUR;
+    item.requiresSilkTouch = true;
+    baseItems.push_back(item);
+    
+    item.name = "Glowstone Dust";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Gold Ingot";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Gravel";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Gunpowder";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Iron Ingot";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Iron Nugget";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Leather";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Log";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    /*Will eventually be expanded to all wood types*/
+
+    item.name = "Nether Quartz";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Netherrack";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Redstone Dust";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Sand";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Sandstone";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Shulker Shell";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Slimeball";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Stone";
+    item.stackSize = SIXTY_FOUR;
+    item.requiresSilkTouch;
+    baseItems.push_back(item);
+    
+    item.name = "String";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Sugar Cane";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Wheat";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
+    item.name = "Wool";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+    
 }
 
 void displayDirectory(string items[], int itemCount, string categoryName, string& navigate){
@@ -128,6 +331,7 @@ void directoryBaseItems(string& navigate){
         "Copper Nugget",
         "Diamond",
         "Dye (No distinct colors, all are just under Dye)",
+        "Ender Pearl"
         "Flint",
         "Glass - Requires Silk Touch or Smelting",
         "Glowstone - Requires Silk Touch",
@@ -152,7 +356,7 @@ void directoryBaseItems(string& navigate){
         "Wheat",
         "Wool"
     };
-    displayDirectory(items, 37, "Base Items", navigate);
+    displayDirectory(items, 38, "Base Items", navigate);
 }
 void directorySingleCrafts(string& navigate){
     string items[] = {
@@ -252,6 +456,7 @@ void directoryMultiCrafts(string& navigate){
         "Door",
         "Fence",
         "Fence Gate",
+        "Firework Rocket"
         "Fishing Rod",
         "Fletching Table",
         "Glass Panes",
@@ -293,7 +498,7 @@ void directoryMultiCrafts(string& navigate){
         "Wooden Stair",
         "Wooden Trapdoor"
     };
-    displayDirectory (items, 72, "Multi-Crafts", navigate);
+    displayDirectory (items, 73, "Multi-Crafts", navigate);
 }
 void directorySmelts(string& navigate){
     string items[] {
@@ -321,6 +526,10 @@ void directoryObtainables(string& navigate){
 }
 
 int main() {
+
+    populateRecipes();
+    populateBaseItems();
+
     string choice;
     string selection;
     string navigate;
