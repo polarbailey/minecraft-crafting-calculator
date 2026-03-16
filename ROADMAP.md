@@ -29,6 +29,9 @@
 - [ ] Update stack converter math to use stackSize instead of hardcoded 64 *(Post School Feature)*
 - [ ] Update displayQuantity() to reflect correct stack sizes per item *(Post School Feature)*
 
+**3/16/26**
+- [ ] Enchanting guide for least expensive (huge maybe, wouldn't be until at least 3.0 at minimum)
+
 ***VERSION ITENERARY POST V1.0***
 - [ ] v1.0 Final School Submission
 - [ ] v1.1 Structure aware Stack Conversion (checking actual stack size of items converting for whether its x64, x16, or x1)
