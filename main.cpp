@@ -35,6 +35,8 @@ struct Recipe {
     bool requiresSilkTouch = false;
     bool requiresStonecutter = false;
     bool isSmelt = false;
+    bool requiresBees = false;
+    bool isObtainable = false;
     StackSize stackSize;
 };
 struct BaseItem {
@@ -98,7 +100,545 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
 void populateRecipes(){
     Recipe recipe;
 
+    recipe.name = "Chiseled Sandstone";
+    recipe.ingredients[0].name = "Sandstone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
 
+    recipe.name = "Chiseled Stone Brick";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Chiseled Stone Brick";
+    recipe.ingredients[0].name = "Stone Brick";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cobblestone Slab";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cobblestone Stiar";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cobblestone Wall";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Sandstone";
+    recipe.ingredients[0].name = "Sandstone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Sandstone Slab";
+    recipe.ingredients[0].name = "Sandstone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Sandstone Slab";
+    recipe.ingredients[0].name = "Sandstone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Sandstone Stair";
+    recipe.ingredients[0].name = "Sandstone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Sandstone Wall";
+    recipe.ingredients[0].name = "Sandstone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Brick";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Brick Slab";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Brick Slab";
+    recipe.ingredients[0].name = "Stone Brick";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Brick Stair";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Brick Stair";
+    recipe.ingredients[0].name = "Stone Brick";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Brick Wall";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Brick Wall";
+    recipe.ingredients[0].name = "Stone Brick";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Slab";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stone Stair";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+
+    recipe.name = "Chiseled Copper";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.name = "Chiseled Copper";
+    recipe.ingredients[0].name = "Cut Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Copper Grate";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Copper Block";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = SIXTY_FOUR;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Copper Slab";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 8;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Copper Slab";
+    recipe.ingredients[0].name = "Cut Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Copper Stair";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Copper Stair";
+    recipe.ingredients[0].name = "Cut Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresStonecutter = true;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Bamboo Block";
+    recipe.ingredients[0].name = "Bamboo";
+    recipe.ingredients[0].quantity = 9;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Blaze Powder";
+    recipe.ingredients[0].name = "Blaze Rod";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Bonemeal";
+    recipe.ingredients[0].name = "Bone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Brewing Stand";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredients[1].name = "Blaze Rod";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Bucket";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Bundle";
+    recipe.ingredients[0].name = "String";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Leather";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Cauldron";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 7;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Chiseled Stone Brick";
+    recipe.ingredients[0].name = "Stone Brick Slab";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Clay Block";
+    recipe.ingredients[0].name = "Clay Ball";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Coal Block";
+    recipe.ingredients[0].name = "Coal";
+    recipe.ingredients[0].quantity = 9;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Cobblestone Slab";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Cobblestone Stair";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Cobblestone Wall";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Compass";
+    recipe.ingredients[0].name = "Redstone Dust";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Iron Ingot";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Concrete Powder"; // All colors grouped here, will separate by color later
+    recipe.ingredients[0].name = "Dye";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Sand";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredients[2].name = "Gravel";
+    recipe.ingredients[2].quantity = 4;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 8;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Copper Bars";
+    recipe.ingredients[0].name = "Copper Ingot";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 16;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Copper Block";
+    recipe.ingredients[0].name = "Copper Ingot";
+    recipe.ingredients[0].quantity = 9;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Copper Nugget";
+    recipe.ingredients[0].name = "Copper Ingot";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 9;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Copper Trapdoor";
+    recipe.ingredients[0].name = "Copper Ingot";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Cut Sandstone";
+    recipe.ingredients[0].name = "Sandstone";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Dropper";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 7;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Furnace";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 8;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Glass Bottle";
+    recipe.ingredients[0].name = "Glass";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Honey Bottle";
+    recipe.ingredients[0].name = "Glass Bottle";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.requiresBees = true;
+    recipe.isObtainable = true;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Glowstone";
+    recipe.ingredients[0].name = "Glowstone Dust";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Gold Block";
+    recipe.ingredients[0].name = "Gold Ingot";
+    recipe.ingredients[0].quantity = 9;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Hay Bale";
+    recipe.ingredients[0].name = "Wheat";
+    recipe.ingredients[0].quantity = 9;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Heavy Weighted Pressure Plate";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Iron Bars";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 16;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Iron Block";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 9;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Iron Door";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Iron Ingot";
+    recipe.ingredients[0].name = "Iron Nugget";
+    recipe.ingredients[0].quantity = 9;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Iron Nugget";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 9;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Iron Trapdoor";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
 }
 
 void populateBaseItems(){
@@ -195,11 +735,6 @@ void populateBaseItems(){
     
     item.name = "Gunpowder";
     item.stackSize = SIXTY_FOUR;
-    baseItems.push_back(item);
-
-    item.name = "Honey Bottle";
-    item.stackSize = SIXTEEN;
-    item.requiresBees = true;
     baseItems.push_back(item);
 
     item.name = "Honeycomb";
