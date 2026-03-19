@@ -831,6 +831,623 @@ void populateRecipes(){
     
     // Regular Multi Crafts now
 
+    recipe.name = "Activator Rail";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredients[2].name = "Redstone Torch";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Anvil";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Iron Block";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Bamboo Planks";
+    recipe.ingredients[0].name = "Bamboo Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Barrel";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Wooden Slab";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Bed";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredients[1].name = "Wool";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Beehive";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Honeycomb";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Blast Furnace";
+    recipe.ingredients[0].name = "Furnace";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Iron Ingot";
+    recipe.ingredients[1].quantity = 5;
+    recipe.ingredients[2].name = "Smooth Stone";
+    recipe.ingredients[2].quantity = 3;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Boat";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 5;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Book";
+    recipe.ingredients[0].name = "Leather";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Paper";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Bookshelf";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Book";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Bow";
+    recipe.ingredients[0].name = "Stick";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredients[1].name = "String";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Button";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Campfire";
+    recipe.ingredients[0].name = "Log";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredients[2].name = "Coal";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cartography Table";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Paper";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Chest";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 8;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Chiseled Bookshelf";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Wooden Slab";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Chiseled Copper";
+    recipe.ingredients[0].name = "Cut Copper Slab";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Composter";
+    recipe.ingredients[0].name = "Wooden Slab";
+    recipe.ingredients[0].quantity = 7;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Copper Bulb";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredients[2].name = "Blaze Rod";
+    recipe.ingredients[25].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Copper Chain";
+    recipe.ingredients[0].name = "Copper Ingot";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Copper Nugget";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Copper Grate";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Copper Ingot";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 9;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Crafter";
+    recipe.ingredients[0].name = "Crafting Table";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredients[2].name = "Dropper";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredients[3].name = "Iron Ingot";
+    recipe.ingredients[3].quantity = 5;
+    recipe.ingredientCount = 4;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Crafting Table";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Copper Block";
+    recipe.ingredients[0].name = "Copper Block";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Copper Slab";
+    recipe.ingredients[0].name = "Cut Cupper Block";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Cut Copper Stair";
+    recipe.ingredients[0].name = "Cut Copper Block";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Detector Rail";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stone Pressure Plate";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredients[2].name = "Redstone Dust";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Dispenser";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 7;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredients[2].name = "Bow";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Door"; // currently doesn't differentiate wood types, but you need matching planks
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Fence"; // currently doesn't differentiate wood types, but you need matching planks
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Fence Gate"; // currently doesn't differentiate wood types, but you need matching planks
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Firework"; // This is only showing for flight level 1 fireworks. Will add the other levels later, but likely not the rest of firework crafting outside of whats needed for elytra travel
+    recipe.ingredients[0].name = "Gunpowder";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Paper";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Fishing Rod";
+    recipe.ingredients[0].name = "Stick";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredients[1].name = "String";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Fletching Table";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Flint";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Glass Pane";
+    recipe.ingredients[0].name = "Glass";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 16;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Grindstone";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredients[2].name = "Stone Slab";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Honey Block";
+    recipe.ingredients[0].name = "Honey Bottle";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Hopper";
+    recipe.ingredients[0].name = "Chest";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Iron Ingot";
+    recipe.ingredients[1].quantity = 5;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Hopper Minecart";
+    recipe.ingredients[0].name = "Hopper";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Minecart";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Iron Chain";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Iron Nugget";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Jukebox";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 8;
+    recipe.ingredients[1].name = "Diamond";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+        
+    recipe.name = "Ladder";
+    recipe.ingredients[0].name = "Stick";
+    recipe.ingredients[0].quantity = 7;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Lectern";
+    recipe.ingredients[0].name = "Wooden Slab";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Bookshelf";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Lever";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Lodestone"; // if playing in an older version you might need Netherite ingot instead of iron, but this will be accurate as of 1.21.5
+    recipe.ingredients[0].name = "Chiseled Stone Brick";
+    recipe.ingredients[0].quantity = 8;
+    recipe.ingredients[1].name = "Iron Ingot";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Loom";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "String";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Note Block";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 8;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Observer";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredients[2].name = "Nether Quartz";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Piston";
+    recipe.ingredients[0].name = "Cobblestone";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Planks";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredients[2].name = "Iron Ingot";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredients[3].name = "Redstone Dust";
+    recipe.ingredients[3].quantity = 4;
+    recipe.ingredientCount = 4;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Powered Rail";
+    recipe.ingredients[0].name = "Gold Ingot";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Rail";
+    recipe.ingredients[0].name = "Iron Ingot";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 16;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Redstone Comparator";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredients[1].name = "Redstone Torch";
+    recipe.ingredients[1].quantity = 3;
+    recipe.ingredients[2].name = "Nether Quartz";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Redstone Repeater";
+    recipe.ingredients[0].name = "Stone";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredients[1].name = "Redstone Torch";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Redstone Torch";
+    recipe.ingredients[0].name = "Stick";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+            
+    recipe.name = "Scaffolding";
+    recipe.ingredients[0].name = "Bamboo";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "String";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Shield";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Iron Ingot";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Shulker Box";
+    recipe.ingredients[0].name = "Chest";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Shulker Shell";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Sign"; // Doesn't differentiate wood types yet, but matching planks
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Smithing Table";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Iron Ingot";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Smoker";
+    recipe.ingredients[0].name = "Furnace";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Log";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stained Glass"; // consolidates all colors for now.
+    recipe.ingredients[0].name = "Glass";
+    recipe.ingredients[0].quantity = 8;
+    recipe.ingredients[1].name = "Dye";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 8;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
     
 }
 
