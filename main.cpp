@@ -1449,6 +1449,114 @@ void populateRecipes(){
     recipe.stackSize = SIXTY_FOUR;
     recipes.push_back(recipe);
     
+    recipe.name = "Stained Glass Panes";
+    recipe.ingredients[0].name = "Stained Glass";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 16;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Stick";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Sticky Piston";
+    recipe.ingredients[0].name = "Piston";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Slimeball";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Target Block";
+    recipe.ingredients[0].name = "Hay Bale";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Redstone Dust";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Tinted Glass";
+    recipe.ingredients[0].name = "Glass";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Amethyst Shard";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "TNT";
+    recipe.ingredients[0].name = "Sand";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Gunpowder";
+    recipe.ingredients[1].quantity = 5;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Tripwire Hook";
+    recipe.ingredients[0].name = "Stick";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredients[1].name = "Iron Ingot";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredients[2].name = "Planks";
+    recipe.ingredients[2].quantity = 1;
+    recipe.ingredientCount = 3;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Wooden Door";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Wooden Pressure Plate";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Wooden Slab";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Wooden Stair";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
+    recipe.name = "Wooden Trapdoor";
+    recipe.ingredients[0].name = "Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
 }
 
 void populateBaseItems(){
@@ -1944,12 +2052,13 @@ void directoryMultiCrafts(string& navigate){
         "Tinted Glass",
         "TNT",
         "Tripwire Hook",
+        "Wooden Door",
         "Wooden Pressure Plate",
         "Wooden Slab",
         "Wooden Stair",
         "Wooden Trapdoor"
     };
-    displayDirectory (items, 73, "Multi-Crafts", navigate);
+    displayDirectory (items, 74, "Multi-Crafts", navigate);
 }
 void directorySmelts(string& navigate){
     string items[] {
