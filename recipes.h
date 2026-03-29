@@ -2,6 +2,8 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cmath>
+#include <iostream>
 
 using namespace std;
 
@@ -48,3 +50,5 @@ void populateRecipes();
 void populateSmelts();
 int findRecipe(string itemName);
 int findBaseItem(string itemName);
+
+void resolveRecipe(string itemName, unsigned int quantity, vector<string>& resultNames, vector<unsigned int>& resultQuantities);

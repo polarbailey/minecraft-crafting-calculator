@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <thread>
 #include <chrono>
-#include <cmath>
 #include "recipes.h"
 #include "directory.h"
 
@@ -127,7 +126,28 @@ int main() {
         } while (again == "yes" || again == "y");
     }
         else if (choice == "2" || choice == "recipe") {
-            cout << "This feature is currently under construction. Please check back later." << endl;
+            string itemName;
+            unsigned int quantity;
+            int baseCheck;
+            int recipeCheck;
+            cin.ignore();
+
+            do{
+                cout << "\nWhat item are you crafting?" << endl;
+                getline(cin, itemName);
+
+                baseCheck = findBaseItem(itemName);
+                recipeCheck = findRecipe(itemName);
+
+                if (baseCheck == -1 && recipeCheck == -1) {
+                    cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again."<< endl;
+                }
+            } while (baseCheck == -1 && recipeCheck == -1);
+            
+            cout << "\nAnd how many " << itemName << " would you like to craft?" << endl;
+            cin >> quantity;
+
+            cout << "\n this is " << itemName << ", and you want " << quantity << " of them." << endl; //TO BE DELETED AND THE ACTUAL RECIPE CONVERTER TO BE ADDED.
         }
         else if (choice == "3" || choice == "directory") {
             do {

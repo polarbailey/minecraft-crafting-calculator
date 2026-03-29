@@ -1754,3 +1754,34 @@ int findBaseItem(string itemName) {
     }
     return -1; // otherwise returns an index that means not found
 }
+
+void resolveRecipe(string itemName, unsigned int quantity, vector<string>& resultNames, vector<unsigned int>& resultQuantities){
+    bool found = false;
+    int baseIndex = findBaseItem(itemName);
+    if (baseIndex != -1) {
+        for (int i=0; i < resultNames.size(); ++i){
+            if (baseItems[baseIndex].name == resultNames[i]){
+               resultQuantities[i] += quantity; 
+               found = true;
+               break;
+            }
+        }
+        if (!found){
+            resultNames.push_back(baseItems[baseIndex].name);
+            resultQuantities.push_back(quantity);
+        }
+    }
+    else {
+        int recipeIndex = findRecipe(itemName);
+        if (recipeIndex != -1) {
+            int craftsNeeded = ceil((double)quantity / recipes[recipeIndex].yieldAmount);
+            for (int i = 0; i < recipes[recipeIndex].ingredientCount; ++i) {
+                resolveRecipe(recipes[recipeIndex].ingredients[i].name, recipes[recipeIndex].ingredients[i].quantity * craftsNeeded, resultNames, resultQuantities);
+            }
+        }
+        else{
+            cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again."<< endl; 
+        }
+
+    }
+}
