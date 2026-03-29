@@ -4,6 +4,7 @@
 #include <thread>
 #include <chrono>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
@@ -1818,6 +1819,36 @@ void populateSmelts(){
     recipes.push_back(recipe);
     
 };
+
+int findRecipe(string itemName) {
+    string lowerInput = itemName;
+    transform(lowerInput.begin(), lowerInput.end(), lowerInput.begin(), ::tolower); // takes inputted recipe name and makes it all lowercase
+
+    for (int i = 0; i < recipes.size(); ++i) {
+        string lowerRecipe = recipes[i].name;
+        transform(lowerRecipe.begin(), lowerRecipe.end(), lowerRecipe.begin(), ::tolower); //takes Recipe in database and makes it all lowercase
+
+        if (lowerRecipe == lowerInput) {
+            return i; // if the input (that's been lowercased) matches the recipe name (thats also been lowercased) return the index it was found
+        }
+    }
+    return -1; // otherwise returns an index that means not found
+}
+
+int findBaseItem(string itemName) {
+    string lowerInput = itemName;
+    transform(lowerInput.begin(), lowerInput.end(), lowerInput.begin(), ::tolower); // takes inputted name and makes it all lowercase
+
+    for (int i = 0; i < baseItems.size(); ++i) {
+        string lowerBaseItem = baseItems[i].name;
+        transform(lowerBaseItem.begin(), lowerBaseItem.end(), lowerBaseItem.begin(), ::tolower); //takes name in database and makes it all lowercase
+
+        if (lowerBaseItem == lowerInput) {
+            return i; // if the input (that's been lowercased) matches the recipe name (thats also been lowercased) return the index it was found
+        }
+    }
+    return -1; // otherwise returns an index that means not found
+}
 
 void displayDirectory(string items[], int itemCount, string categoryName, string& navigate){
     int totalPages = (itemCount + 4) / 5;
