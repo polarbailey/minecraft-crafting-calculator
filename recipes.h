@@ -7,6 +7,13 @@
 
 using namespace std;
 
+extern bool hasBamboo;
+extern bool hasSilkTouch;
+extern bool hasStonecutter;
+extern bool hasBadlands;
+extern bool hasNether;
+extern bool hasBees;
+
 enum StackSize{
     SIXTY_FOUR = 64,
     SIXTEEN = 16,
@@ -50,5 +57,5 @@ void populateRecipes();
 void populateSmelts();
 int findRecipe(string itemName);
 int findBaseItem(string itemName);
-
 void resolveRecipe(string itemName, unsigned int quantity, vector<string>& resultNames, vector<unsigned int>& resultQuantities);
+StackSize getStackSize(string itemName);

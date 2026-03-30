@@ -15,14 +15,16 @@ bool hasBadlands = false;
 bool hasNether = false;
 bool hasBees = false;
 
-void displayQuantity(string itemName, unsigned int itemAmount) {
-    unsigned int doubleChests = itemAmount / 93312; // 99312 = 54 shulkers full of stacks of items.
-    unsigned int shulkers = (itemAmount % 93312) / 1728; // Amount of full shulkers that don't completely fill a double chest
-    unsigned int remainder = itemAmount % 1728; // total items not filling a full shulker
-    unsigned int stacks = remainder / 64; // amount of full stacks that don't fill a full shulker
-    unsigned int excess = remainder % 64; // amount of loose items
+StackSize stackSize;
 
-    cout << "For " << itemAmount << " " << itemName << ", you will need " << endl;
+void displayQuantity(string itemName, unsigned int itemAmount, StackSize stackSize) {
+    unsigned int doubleChests = itemAmount / (1458 * stackSize); // now this checks recipes and converts based on stack size
+    unsigned int shulkers = (itemAmount % (1458 * stackSize)) / (27 * stackSize); // Amount of full shulkers that don't completely fill a double chest
+    unsigned int remainder = itemAmount % (27 * stackSize); // total items not filling a full shulker
+    unsigned int stacks = remainder / stackSize; // amount of full stacks that don't fill a full shulker
+    unsigned int excess = remainder % stackSize; // amount of loose items
+
+    cout << "\nFor " << itemAmount << " " << itemName << ", you will need " << endl;
     this_thread::sleep_for(chrono::milliseconds(416));
     cout << "\nConverting";
     cout.flush();
@@ -57,7 +59,41 @@ void displayQuantity(string itemName, unsigned int itemAmount) {
     if (excess == 0) {
         cout << " of";
     }
-    cout << " " << itemName << "." << endl;
+    cout << itemName << "." << endl;
+}
+
+void displayQuantityNoAnim(string itemName, unsigned int itemAmount, StackSize stackSize) {
+    unsigned int doubleChests = itemAmount / (1458 * stackSize); // now this checks recipes and converts based on stack size
+    unsigned int shulkers = (itemAmount % (1458 * stackSize)) / (27 * stackSize); // Amount of full shulkers that don't completely fill a double chest
+    unsigned int remainder = itemAmount % (27 * stackSize); // total items not filling a full shulker
+    unsigned int stacks = remainder / stackSize; // amount of full stacks that don't fill a full shulker
+    unsigned int excess = remainder % stackSize; // amount of loose items
+
+    if (doubleChests > 0) {
+        cout << doubleChests;
+        if (doubleChests == 1) cout << " Double Chest of Shulkers";
+        else cout << " Double Chests of Shulkers";
+        if (shulkers > 0 || stacks > 0 || excess > 0) cout << " + "; // this way there aren't erroneous "+" or other stuff if the math was clean whole numbers
+    }
+    if (shulkers > 0) {
+        cout << shulkers;
+        if (shulkers == 1) cout << " Shulker";
+        else cout << " Shulkers";
+        if (stacks > 0 || excess > 0) cout << " + "; 
+    }
+    if (stacks > 0) {
+        cout << stacks;
+        if (stacks == 1) cout << " Stack";
+        else cout << " Stacks";
+        if (excess > 0) cout << " + ";
+    }
+    if (excess > 0) {
+        cout << excess << " ";
+    }
+    if (excess == 0) {
+        cout << " of";
+    }
+    cout << itemName << "." << endl;
 }
 
 int main() {
@@ -94,7 +130,7 @@ int main() {
                 unsigned int itemAmount;
                 bool validInput = false;
                 do{
-                    cout << "How much " << itemName << " are you converting? ";
+                    cout << "How many " << itemName << " do you need? ";
                     cin >> itemAmount;
                     if (cin.fail()) {
                         cin.clear(); // clears the error flag
@@ -106,9 +142,13 @@ int main() {
                     validInput = true;
                 }
             } while (!validInput);
-
-                displayQuantity(itemName, itemAmount);
-                cout << "\nNote: This tool is currently only accurate for items that stack into stacks of 64." << endl;
+                StackSize itemStackSize = getStackSize(itemName);
+                if (findBaseItem(itemName) == -1 && findRecipe(itemName) == -1) {
+                    cout << "\nI didn't find " << itemName << " in my database. This will assume " << itemName << " stacks to 64." << endl;
+                    cout << "\nIf you believe this to be an error, check your spelling and try again." << endl;
+                }
+                this_thread::sleep_for(chrono::milliseconds(416));
+                displayQuantity(itemName, itemAmount, itemStackSize);
                 do {
                     cout << "\nWould you like to convert something else? (yes/no): ";
                     cin >> again;
@@ -127,28 +167,75 @@ int main() {
     }
         else if (choice == "2" || choice == "recipe") {
             string itemName;
+            string again;
             unsigned int quantity;
             int baseCheck;
             int recipeCheck;
             cin.ignore();
-
             do{
-                cout << "\nWhat item are you crafting?" << endl;
-                getline(cin, itemName);
+                do{
+                    cout << "\nWhat item are you crafting?" << endl;
+                    getline(cin, itemName);
 
-                baseCheck = findBaseItem(itemName);
-                recipeCheck = findRecipe(itemName);
+                    baseCheck = findBaseItem(itemName);
+                    recipeCheck = findRecipe(itemName);
 
-                if (baseCheck == -1 && recipeCheck == -1) {
-                    cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again."<< endl;
-                }
-            } while (baseCheck == -1 && recipeCheck == -1);
+                    if (baseCheck == -1 && recipeCheck == -1) {
+                        cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again."<< endl;
+                    }
+                } while (baseCheck == -1 && recipeCheck == -1);
             
-            cout << "\nAnd how many " << itemName << " would you like to craft?" << endl;
-            cin >> quantity;
+                bool validInput = false;
+                do{
+                    cout << "\nHow many " << itemName << " are you crafting? ";
+                    cin >> quantity;
+                    if (cin.fail()) {
+                        cin.clear(); // clears the error flag
+                        cin.ignore(1000, '\n'); // discards the bad input from the buffer
+                        cout << "\nThat number is too large. Please enter a valid quantity." << endl << endl;
+                        continue; // loops back to the start of the do while
+                }
+                else { 
+                    validInput = true;
+                }
+                } while (!validInput);
+                vector<string> resultNames;
+                vector<unsigned int> resultQuantities;
+                resolveRecipe(itemName, quantity, resultNames, resultQuantities);
 
-            cout << "\n this is " << itemName << ", and you want " << quantity << " of them." << endl; //TO BE DELETED AND THE ACTUAL RECIPE CONVERTER TO BE ADDED.
-        }
+                cout << "\nFor " << quantity << " " << itemName << ", you will need " << endl;
+                this_thread::sleep_for(chrono::milliseconds(416));
+                cout << "\nConverting";
+                cout.flush();
+                this_thread::sleep_for(chrono::milliseconds(417));
+                for (int i = 0; i < 3; i++) {
+                    cout << " . ";
+                    cout.flush();
+                    this_thread::sleep_for(chrono::milliseconds(417));
+                }
+                cout << endl << endl;
+                for (int i = 0; i < resultNames.size(); ++i) {
+                    int baseIndex = findBaseItem(resultNames[i]);
+                    StackSize stackSize = baseItems[baseIndex].stackSize;
+                    displayQuantityNoAnim(resultNames[i], resultQuantities[i], stackSize);
+                }
+                do {
+                    cout << "\nWould you like to convert something else? (yes/no): ";
+                    cin >> again;
+                    cin.ignore(1000, '\n');
+                    transform(again.begin(), again.end(), again.begin(), ::tolower);
+
+                    if (again == "0" || again == "quit" || again == "stop") {
+                        cout << "Goodbye!" << endl;
+                        running = false;
+                        break;
+                    }
+                    if (again != "yes" && again != "y" && again != "no" && again != "n") {
+                        cout << "\nI'm sorry, my database is limited. You must enter the right selection." << endl; // this requires a proper selection rather than immediately going back to the main menu.
+                    }
+                } while (again != "yes" && again != "y" && again != "no" && again != "n" && again != "0" && again != "quit" && again != "stop");
+        } while (again == "yes" || again == "y"); 
+    }
         else if (choice == "3" || choice == "directory") {
             do {
                 cout << "\nWelcome to the Item Directory. Which Category do you want to see?" << endl;
