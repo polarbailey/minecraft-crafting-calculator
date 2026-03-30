@@ -16,7 +16,7 @@
 **3/14/26**
 - [ ] Add Disparity for Java vs. Bedrock (Certain recipes are slightly different between versions. e.g. stonecutter can use any stone type in Bedrock, not just "Stone")
 - [x] *added 3/14/26* Start Roadmap document
-- [ ] refine Stack converter to Double Chests of Shulkers, Chests of Shulkers, Shulkers, Stacks, and Excess *(Post School Feature)*
+- [ ] refine Stack converter to Double Chests of Shulkers, Chests of Shulkers, Shulkers, Stacks, and Excess ~~*(Post School Feature)*~~ adding this now in v0.60 to make the recipe converter more accurate.
 - [ ] Add Multi-Craft Sum conversions (The ability to get a combination of all Raw materials for multiple different recipes in one usage of the program. e.g. getting 1 combined result for making say 100 pistons, 45 Redstone Comparators, 95 hoppers, 42 chests, and 30 copper bars *(Post School Feature)*
 - [ ] finish setting up recipe converter logic for crafts
 - [ ] Connect recipe converter to stack converter
@@ -33,7 +33,11 @@
 - [ ] Enchanting guide for least expensive (huge maybe, wouldn't be until at least 3.0 at minimum)
 
 **3/28/26**
-- [ ] separate the directory and recipes into their own pages (Post School Feature)
+- [x] separate the directory and recipes into their own pages ~~(Post School Feature)~~
+
+**3/30/26**
+- [ ] v1.x - Basic terminal search (returns category and page number) *(Post School Feature)*
+- [ ] v2.x - Real time search with highlighting in web UI *(Post School Feature)*
 
 ***VERSION ITENERARY POST V1.0***
 - [ ] v1.0 Final School Submission
