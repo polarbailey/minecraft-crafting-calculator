@@ -1943,6 +1943,7 @@ int findRecipe(string itemName) {
 
         if (lowerRecipe == lowerInput) {
             if (recipes[i].requiresBamboo && !hasBamboo) continue;
+            if (recipes[i].requiresBamboo && hasBamboo && !preferBambooSticks) continue;
             if (recipes[i].requiresSilkTouch && !hasSilkTouch) continue;
             if (recipes[i].requiresStonecutter && !hasStonecutter) continue;
             if (recipes[i].requiresBadlands && !hasBadlands) continue;

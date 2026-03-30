@@ -13,6 +13,7 @@ extern bool hasStonecutter;
 extern bool hasBadlands;
 extern bool hasNether;
 extern bool hasBees;
+extern bool preferBambooSticks;
 
 enum StackSize{
     SIXTY_FOUR = 64,

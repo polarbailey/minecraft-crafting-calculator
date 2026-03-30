@@ -14,6 +14,7 @@ bool hasStonecutter = false;
 bool hasBadlands = false;
 bool hasNether = false;
 bool hasBees = false;
+bool preferBambooSticks = false;
 
 StackSize stackSize;
 
@@ -200,6 +201,7 @@ int main() {
             hasBadlands = false;
             hasNether = false;
             hasBees = false;
+            preferBambooSticks = false;
 
             cout << "\nWelcome to the Recipe Converter." << endl;
             this_thread::sleep_for(chrono::milliseconds(416));
@@ -207,64 +209,72 @@ int main() {
             this_thread::sleep_for(chrono::milliseconds(417));
 
             do {
-                cout << "\nDo you have access to Bamboo? (y/n) ";
+                cout << "\nDo you have access to Bamboo? (y/n): ";
                 cin >> answer;
                 transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
                 if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
                     cout << "Please answer with y or n." << endl;
                 }
             } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
-                if (answer == "y" || answer == "yes") hasBamboo = true;
-            
+            if (answer == "y" || answer == "yes") hasBamboo = true;
+                do {
+                    cout << "Do you prefer to use Bamboo or Planks for Sticks? (b/p): ";
+                    cin >> answer;
+                    transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+                    if (answer != "bamboo" && answer != "b" && answer != "planks" && answer !="p") {
+                    cout << "Please answer with Bamboo or Planks (b/p)." << endl;
+                    }
+                } while (answer != "bamboo" && answer != "b" && answer != "planks" && answer !="p");
+                if (answer == "bamboo" || answer == "b") preferBambooSticks = true;
             do {
-                cout << "\nDo you have access to Silk Touch? (y/n) ";
+                cout << "\nDo you have access to Silk Touch? (y/n): ";
                 cin >> answer;
                 transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
                 if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
                     cout << "Please answer with y or n." << endl;
                 }
             } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
-                if (answer == "y" || answer == "yes") hasSilkTouch = true;
+            if (answer == "y" || answer == "yes") hasSilkTouch = true;
 
             do {
-                cout << "\nDo you have access to a Stonecutter? (y/n) ";
+                cout << "\nDo you have access to a Stonecutter? (y/n): ";
                 cin >> answer;
                 transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
                 if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
                     cout << "Please answer with y or n." << endl;
                 }
             } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
-                if (answer == "y" || answer == "yes") hasStonecutter = true;
+            if (answer == "y" || answer == "yes") hasStonecutter = true;
             
                 do {
-                cout << "\nDo you have access to a Badlands Biome? (y/n) ";
+                cout << "\nDo you have access to a Badlands Biome? (y/n): ";
                 cin >> answer;
                 transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
                 if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
                     cout << "Please answer with y or n." << endl;
                 }
             } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
-                if (answer == "y" || answer == "yes") hasBadlands = true;
+            if (answer == "y" || answer == "yes") hasBadlands = true;
             
             do {    
-                cout << "\nDo you have access to the Nether? (y/n) ";
+                cout << "\nDo you have access to the Nether? (y/n): ";
                 cin >> answer;
                 transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
                 if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
                     cout << "Please answer with y or n." << endl;
                 }
             } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
-                if (answer == "y" || answer == "yes") hasNether = true;
+            if (answer == "y" || answer == "yes") hasNether = true;
             
             do {    
-                cout << "\nDo you have access to Bees? (y/n) ";
+                cout << "\nDo you have access to Bees? (y/n): ";
                 cin >> answer;
                 transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
                 if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
                     cout << "Please answer with y or n." << endl;
                 }
             } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
-                if (answer == "y" || answer == "yes") hasBees= true;
+            if (answer == "y" || answer == "yes") hasBees= true;
 
             cin.ignore();
             do{
