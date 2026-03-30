@@ -1,4 +1,17 @@
 **Current Roadmap**
+
+***VERSION ITENERARY POST V1.0***
+- [ ] v1.0 Final School Submission
+- [ ] v1.1 Add all wood variants (oak, birch, crimson, etc.)
+- [ ] v1.2 Add Stone Variants (Blackstone and Deepslate)
+- [ ] v1.3 Add Extra Stone (Granite, andesite, diorite, etc.)
+- [ ] v1.4 Add "Decoration" Blocks (ones that don't necessarily serve a function, just for building)
+- [ ] v1.5 Add Multi-Craft option (allow for multiple crafting recipes to be converted together instead of one at a time to get total ingredient list)
+- [ ] v1.6-1.7 Unknown currently (buffer for final pre 2.0 testing)
+- [ ] v1.8 Send to WebAssembly for testing Web-based UI
+- [ ] v1.9 Final UI testing
+- [ ] v2.0 Full Web Based application with GUI included
+
 **3/9/26**
 - [x] *added 3/9/26* Add an artificial delay for calculations (studies show it produces higher confidence in results)
 - [x] *added 3/9/26* convert to 3 full branches: 1 for school, 1 for development after school is finished, and 1 official release
@@ -39,17 +52,7 @@
 - [ ] v1.x - Basic terminal search (returns category and page number) *(Post School Feature)*
 - [ ] v2.x - Real time search with highlighting in web UI *(Post School Feature)*
 
-***VERSION ITENERARY POST V1.0***
-- [ ] v1.0 Final School Submission
-- [ ] v1.1 Add all wood variants (oak, birch, crimson, etc.)
-- [ ] v1.2 Add Stone Variants (Blackstone and Deepslate)
-- [ ] v1.3 Add Extra Stone (Granite, andesite, diorite, etc.)
-- [ ] v1.4 Add "Decoration" Blocks (ones that don't necessarily serve a function, just for building)
-- [ ] v1.5 Add Multi-Craft option (allow for multiple crafting recipes to be converted together instead of one at a time to get total ingredient list)
-- [ ] v1.6-1.7 Unknown currently (buffer for final pre 2.0 testing)
-- [ ] v1.8 Send to WebAssembly for testing Web-based UI
-- [ ] v1.9 Final UI testing
-- [ ] v2.0 Full Web Based application with GUI included
+
 
 I wanted to make this Roadmap as I started figuring out what features I wanted to give this program, both for my school submission and also for the features I plan on adding after I submit my assignment, because I'll have more time for focusing on the project and not be constrained by my 8 week(ish) timeline.
 It is 3/14/26 and I will be using my commits to try to build the timeline from before I made this ROADMAP as well as keeping it up to date as much as I can. 
