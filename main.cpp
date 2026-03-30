@@ -17,6 +17,27 @@ bool hasBees = false;
 
 StackSize stackSize;
 
+bool getInput(string& input) {
+    cin >> input;
+    transform(input.begin(), input.end(), input.begin(), ::tolower);
+    if (input == "quit" || input == "stop" || input == "0") {
+        cout << "Goodbye!" << endl;
+        exit(0);
+    }
+    return true;
+}
+
+bool getLineInput(string& input) {
+    getline(cin, input);
+    string lower = input;
+    transform(lower.begin(), lower.end(), lower.begin(), ::tolower);
+    if (lower == "quit" || lower == "stop" || lower == "0") {
+        cout << "Goodbye!" << endl;
+        exit(0);
+    }
+    return true;
+}
+
 void displayQuantity(string itemName, unsigned int itemAmount, StackSize stackSize) {
     unsigned int doubleChests = itemAmount / (1458 * stackSize); // now this checks recipes and converts based on stack size
     unsigned int shulkers = (itemAmount % (1458 * stackSize)) / (27 * stackSize); // Amount of full shulkers that don't completely fill a double chest
@@ -125,7 +146,7 @@ int main() {
 
                 cout << "What item are you converting? ";
                 cin.ignore();
-                getline(cin, itemName);
+                getLineInput(itemName);
 
                 unsigned int itemAmount;
                 bool validInput = false;
@@ -168,14 +189,88 @@ int main() {
         else if (choice == "2" || choice == "recipe") {
             string itemName;
             string again;
+            string answer;
             unsigned int quantity;
             int baseCheck;
             int recipeCheck;
+
+            hasBamboo = false;
+            hasSilkTouch = false;
+            hasStonecutter = false;
+            hasBadlands = false;
+            hasNether = false;
+            hasBees = false;
+
+            cout << "\nWelcome to the Recipe Converter." << endl;
+            this_thread::sleep_for(chrono::milliseconds(416));
+            cout << "Before we begin, there are some qualifying questions you need to answer." << endl;
+            this_thread::sleep_for(chrono::milliseconds(417));
+
+            do {
+                cout << "\nDo you have access to Bamboo? (y/n) ";
+                cin >> answer;
+                transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+                if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
+                    cout << "Please answer with y or n." << endl;
+                }
+            } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
+                if (answer == "y" || answer == "yes") hasBamboo = true;
+            
+            do {
+                cout << "\nDo you have access to Silk Touch? (y/n) ";
+                cin >> answer;
+                transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+                if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
+                    cout << "Please answer with y or n." << endl;
+                }
+            } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
+                if (answer == "y" || answer == "yes") hasSilkTouch = true;
+
+            do {
+                cout << "\nDo you have access to a Stonecutter? (y/n) ";
+                cin >> answer;
+                transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+                if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
+                    cout << "Please answer with y or n." << endl;
+                }
+            } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
+                if (answer == "y" || answer == "yes") hasStonecutter = true;
+            
+                do {
+                cout << "\nDo you have access to a Badlands Biome? (y/n) ";
+                cin >> answer;
+                transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+                if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
+                    cout << "Please answer with y or n." << endl;
+                }
+            } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
+                if (answer == "y" || answer == "yes") hasBadlands = true;
+            
+            do {    
+                cout << "\nDo you have access to the Nether? (y/n) ";
+                cin >> answer;
+                transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+                if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
+                    cout << "Please answer with y or n." << endl;
+                }
+            } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
+                if (answer == "y" || answer == "yes") hasNether = true;
+            
+            do {    
+                cout << "\nDo you have access to Bees? (y/n) ";
+                cin >> answer;
+                transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+                if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
+                    cout << "Please answer with y or n." << endl;
+                }
+            } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
+                if (answer == "y" || answer == "yes") hasBees= true;
+
             cin.ignore();
             do{
                 do{
                     cout << "\nWhat item are you crafting?" << endl;
-                    getline(cin, itemName);
+                    getLineInput(itemName);
 
                     baseCheck = findBaseItem(itemName);
                     recipeCheck = findRecipe(itemName);

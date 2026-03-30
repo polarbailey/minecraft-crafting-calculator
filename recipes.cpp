@@ -1935,40 +1935,6 @@ void populateSmelts(){
 
 int findRecipe(string itemName) {
     string lowerInput = itemName;
-    transform(lowerInput.begin(), lowerInput.end(), lowerInput.begin(), ::tolower);
-
-    for (int i = 0; i < recipes.size(); ++i) {
-        string lowerRecipe = recipes[i].name;
-        transform(lowerRecipe.begin(), lowerRecipe.end(), lowerRecipe.begin(), ::tolower);
-
-        if (lowerRecipe == lowerInput) {
-            cout << "Debug - found: " << recipes[i].name << endl;
-            cout << "  requiresBamboo: " << recipes[i].requiresBamboo << endl;
-            cout << "  requiresSilkTouch: " << recipes[i].requiresSilkTouch << endl;
-            cout << "  requiresStonecutter: " << recipes[i].requiresStonecutter << endl;
-            cout << "  requiresBadlands: " << recipes[i].requiresBadlands << endl;
-            cout << "  requiresNether: " << recipes[i].requiresNether << endl;
-            cout << "  hasBamboo: " << hasBamboo << endl;
-            cout << "  hasSilkTouch: " << hasSilkTouch << endl;
-            cout << "  hasStonecutter: " << hasStonecutter << endl;
-            cout << "  hasBadlands: " << hasBadlands << endl;
-            cout << "  hasNether: " << hasNether << endl;
-
-            if (recipes[i].requiresBamboo && !hasBamboo) { cout << "  >> Skipping: requiresBamboo" << endl; continue; }
-            if (recipes[i].requiresSilkTouch && !hasSilkTouch) { cout << "  >> Skipping: requiresSilkTouch" << endl; continue; }
-            if (recipes[i].requiresStonecutter && !hasStonecutter) { cout << "  >> Skipping: requiresStonecutter" << endl; continue; }
-            if (recipes[i].requiresBadlands && !hasBadlands) { cout << "  >> Skipping: requiresBadlands" << endl; continue; }
-            if (recipes[i].requiresNether && !hasNether) { cout << "  >> Skipping: requiresNether" << endl; continue; }
-
-            cout << "  >> Accepted at index: " << i << endl;
-            return i;
-        }
-    }
-    cout << "Debug - no valid recipe found for: " << itemName << endl;
-    return -1;
-}
-/*int findRecipe(string itemName) {
-    string lowerInput = itemName;
     transform(lowerInput.begin(), lowerInput.end(), lowerInput.begin(), ::tolower); // takes inputted recipe name and makes it all lowercase
 
     for (int i = 0; i < recipes.size(); ++i) {
@@ -1985,7 +1951,7 @@ int findRecipe(string itemName) {
         }
     }
     return -1; // otherwise returns an index that means not found
-}*/
+}
 
 int findBaseItem(string itemName) {
     string lowerInput = itemName;
