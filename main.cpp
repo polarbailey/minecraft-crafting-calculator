@@ -202,6 +202,8 @@ int main() {
             hasNether = false;
             hasBees = false;
             preferBambooSticks = false;
+            
+            //first comes the boolean checker to see what recipes it will use
 
             cout << "\nWelcome to the Recipe Converter." << endl;
             this_thread::sleep_for(chrono::milliseconds(416));
@@ -218,7 +220,7 @@ int main() {
             } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
             if (answer == "y" || answer == "yes") hasBamboo = true;
                 do {
-                    cout << "Do you prefer to use Bamboo or Planks for Sticks? (b/p): ";
+                    cout << "Do you prefer to use Bamboo or Planks for Sticks? (b/p): "; //this is to fix the issue with it always preferring bamboo for sticks if you say you have bamboo
                     cin >> answer;
                     transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
                     if (answer != "bamboo" && answer != "b" && answer != "planks" && answer !="p") {
