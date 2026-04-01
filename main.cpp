@@ -79,7 +79,7 @@ void displayQuantity(string itemName, unsigned int itemAmount, StackSize stackSi
         cout << excess << " ";
     }
     if (excess == 0) {
-        cout << " of";
+        cout << " of ";
     }
     cout << itemName << "." << endl;
 }
@@ -113,7 +113,7 @@ void displayQuantityNoAnim(string itemName, unsigned int itemAmount, StackSize s
         cout << excess << " ";
     }
     if (excess == 0) {
-        cout << " of";
+        cout << " of ";
     }
     cout << itemName << "." << endl;
 }

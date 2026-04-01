@@ -72,7 +72,7 @@ void directoryBaseItems(string& navigate){
         "Copper Nugget",
         "Diamond",
         "Dye (No distinct colors, all are just under Dye)",
-        "Ender Pearl"
+        "Ender Pearl",
         "Flint",
         "Glass - Requires Silk Touch or Smelting",
         "Glowstone - Requires Silk Touch",
@@ -199,7 +199,7 @@ void directoryMultiCrafts(string& navigate){
         "Door",
         "Fence",
         "Fence Gate",
-        "Firework Rocket"
+        "Firework Rocket",
         "Fishing Rod",
         "Fletching Table",
         "Glass Panes",
