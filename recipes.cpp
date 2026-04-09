@@ -186,7 +186,7 @@ void populateBaseItems(){
     item = {};
     item.name = "Stone";
     item.stackSize = SIXTY_FOUR;
-    item.requiresSilkTouch;
+    item.requiresSilkTouch = true;
     baseItems.push_back(item);
     
     item = {};
@@ -1819,7 +1819,7 @@ void populateRecipes(){
     recipes.push_back(recipe);
     
     recipe = {};
-    recipe.name = "Wooden Stair";
+    recipe.name = "Wooden Stairs";
     recipe.ingredients[0].name = "Planks";
     recipe.ingredients[0].quantity = 6;
     recipe.ingredientCount = 1;
