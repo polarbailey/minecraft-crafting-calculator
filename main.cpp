@@ -164,8 +164,9 @@ int main() {
                     validInput = true;
                 }
             } while (!validInput);
-                StackSize itemStackSize = getStackSize(itemName);
-                if (findBaseItem(itemName) == -1 && findRecipe(itemName) == -1) {
+                bool itemFound = false;
+                StackSize itemStackSize = getStackSize(itemName, itemFound);
+                if (!itemFound) {
                     cout << "\nI didn't find " << itemName << " in my database. This will assume " << itemName << " stacks to 64." << endl;
                     cout << "\nIf you believe this to be an error, check your spelling and try again." << endl;
                 }
@@ -218,7 +219,8 @@ int main() {
                     cout << "Please answer with y or n." << endl;
                 }
             } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
-            if (answer == "y" || answer == "yes") hasBamboo = true;
+            if (answer == "y" || answer == "yes") {
+                hasBamboo = true;
                 do {
                     cout << "Do you prefer to use Bamboo or Planks for Sticks? (b/p): "; //this is to fix the issue with it always preferring bamboo for sticks if you say you have bamboo
                     cin >> answer;
@@ -228,6 +230,7 @@ int main() {
                     }
                 } while (answer != "bamboo" && answer != "b" && answer != "planks" && answer !="p");
                 if (answer == "bamboo" || answer == "b") preferBambooSticks = true;
+            }
             do {
                 cout << "\nDo you have access to Silk Touch? (y/n): ";
                 cin >> answer;
@@ -288,7 +291,7 @@ int main() {
                     recipeCheck = findRecipe(itemName);
 
                     if (baseCheck == -1 && recipeCheck == -1) {
-                        cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again."<< endl;
+                        cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again. It's possible you don't possess the prerequisites for " << itemName << " currently." << endl;
                     }
                 } while (baseCheck == -1 && recipeCheck == -1);
             

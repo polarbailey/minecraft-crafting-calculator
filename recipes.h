@@ -21,15 +21,23 @@ enum StackSize{
     SINGLE = 1
 };
 
-struct Ingredient {
+class Ingredient {
+public:
     string name;
     unsigned int quantity;
+
+    Ingredient() : name(""), quantity(0) {}
+    string getName() {return name; }
+    unsigned int getQuantity() {return quantity; }
 };
-struct Recipe {
+
+class Recipe {
+public:
     string name;
     Ingredient ingredients[9];
     int ingredientCount;
     unsigned int yieldAmount;
+    StackSize stackSize;
     bool requiresBadlands = false;
     bool requiresBamboo = false;
     bool requiresNether = false;
@@ -38,9 +46,32 @@ struct Recipe {
     bool isSmelt = false;
     bool requiresBees = false;
     bool isObtainable = false;
-    StackSize stackSize;
+
+    Recipe() : name(""), ingredientCount(0), yieldAmount(0), stackSize(SIXTY_FOUR),  // default constructor
+        requiresBadlands(false), requiresBamboo(false), requiresNether(false),
+        requiresSilkTouch(false), requiresStonecutter(false),
+        isSmelt(false), requiresBees(false), isObtainable(false) {}
+
+    // Member functions
+    string getName() { return name; }
+    int getIngredientCount() { return ingredientCount; }
+    unsigned int getYield() { return yieldAmount; }
+    bool isAvailable() {                            // checks if the player has the required resources/tools for this recipe
+        if (requiresBamboo && !hasBamboo) return false;
+        if (requiresBamboo && hasBamboo && !preferBambooSticks) return false;
+        if (requiresSilkTouch && !hasSilkTouch) return false;
+        if (requiresStonecutter && !hasStonecutter) return false;
+        if (requiresBadlands && !hasBadlands) return false;
+        if (requiresNether && !hasNether) return false;
+        return true;
+    }
+    void reset() {                                  
+        *this = Recipe();
+    }
 };
-struct BaseItem {
+
+class BaseItem {
+public:
     string name;
     StackSize stackSize;
     bool requiresSilkTouch = false;
@@ -48,6 +79,23 @@ struct BaseItem {
     bool requiresBadlands = false;
     bool requiresNether = false;
     bool requiresBees = false;
+
+    BaseItem() : name(""), stackSize(SIXTY_FOUR),  // default constructor
+        requiresSilkTouch(false), requiresBamboo(false),
+        requiresBadlands(false), requiresNether(false),
+        requiresBees(false) {}
+
+    // Member functions
+    string getName() { return name; }
+    StackSize getStackSize() { return stackSize; }
+    bool isAvailable() {                            // checks if the player has access to this base item
+        if (requiresSilkTouch && !hasSilkTouch) return false;
+        if (requiresBamboo && !hasBamboo) return false;
+        if (requiresBadlands && !hasBadlands) return false;
+        if (requiresNether && !hasNether) return false;
+        if (requiresBees && !hasBees) return false;
+        return true;
+    }
 };
 
 extern vector<Recipe> recipes; //telling the compiler that these are declared elsewhere
@@ -59,4 +107,4 @@ void populateSmelts();
 int findRecipe(string itemName);
 int findBaseItem(string itemName);
 void resolveRecipe(string itemName, unsigned int quantity, vector<string>& resultNames, vector<unsigned int>& resultQuantities);
-StackSize getStackSize(string itemName);
+StackSize getStackSize(string itemName, bool& found);
