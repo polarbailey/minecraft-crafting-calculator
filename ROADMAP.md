@@ -1,7 +1,7 @@
 **Current Roadmap**
 
 ***VERSION ITENERARY POST V1.0***
-- [ ] v1.0 Final School Submission
+- [x] v1.0 Final School Submission *Released 5/10/26*
 - [ ] v1.1 Add all wood variants (oak, birch, crimson, etc.)
 - [ ] v1.2 Add Stone Variants (Blackstone and Deepslate)
 - [ ] v1.3 Add Extra Stone (Granite, andesite, diorite, etc.)
