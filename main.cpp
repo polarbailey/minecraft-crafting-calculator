@@ -15,6 +15,7 @@ bool hasBadlands = false;
 bool hasNether = false;
 bool hasBees = false;
 bool preferBambooSticks = false;
+bool woolFromSheep = true;
 
 StackSize stackSize;
 
@@ -203,6 +204,7 @@ int main() {
             hasNether = false;
             hasBees = false;
             preferBambooSticks = false;
+            woolFromSheep = false;
             
             //first comes the boolean checker to see what recipes it will use
 
@@ -275,11 +277,23 @@ int main() {
                 cout << "\nDo you have access to Bees? (y/n): ";
                 cin >> answer;
                 transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
-                if (answer != "yes" && answer != "no" && answer != "y" && answer !="n") {
+                if (answer != "yes" && answer != "no" && answer != "y" && answer != "n") {
                     cout << "Please answer with y or n." << endl;
                 }
-            } while (answer != "yes" && answer != "no" && answer != "y" && answer !="n");
-            if (answer == "y" || answer == "yes") hasBees= true;
+            } while (answer != "yes" && answer != "no" && answer != "y" && answer != "n");
+            if (answer == "y" || answer == "yes") hasBees = true;
+
+            cout << "DEBUG WOOL QUESTION" << endl;
+
+            do {
+                cout << "\nDo you want to use String for Wool recipes? (y/n): ";
+                cin >> answer;
+                transform(answer.begin(), answer.end(), answer.begin(), ::tolower);
+                if (answer != "yes" && answer != "no" && answer != "y" && answer != "n") {
+                    cout << "Please answer with y or n." << endl;
+                }
+            } while (answer != "yes" && answer != "no" && answer != "y" && answer != "n");
+            if (answer == "y" || answer == "yes") woolFromSheep = false;       
 
             cin.ignore();
             do{

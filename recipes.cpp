@@ -1959,6 +1959,7 @@ int findBaseItem(string itemName) {
 
         if (lowerBaseItem == lowerInput) {
             if (!baseItems[i].isAvailable()) continue;
+            if (baseItems[i].name == "Wool" && !woolFromSheep) continue; //this allows the string to wool recipe to be used.
             return i; // if the input (that's been lowercased) matches the recipe name (thats also been lowercased) return the index it was found
         }
     }
