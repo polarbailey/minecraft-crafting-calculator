@@ -283,8 +283,6 @@ int main() {
             } while (answer != "yes" && answer != "no" && answer != "y" && answer != "n");
             if (answer == "y" || answer == "yes") hasBees = true;
 
-            cout << "DEBUG WOOL QUESTION" << endl;
-
             do {
                 cout << "\nDo you want to use String for Wool recipes? (y/n): ";
                 cin >> answer;
