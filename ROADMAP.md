@@ -53,7 +53,9 @@
 - [ ] v1.x - Basic terminal search (returns category and page number) *(Post School Feature)*
 - [ ] v2.x - Real time search with highlighting in web UI *(Post School Feature)*
 
-
+**5/10/26**
+- [ ] Fix string to wool issue. u/Wolf68k
+- [ ] Smelting guide (how much coal/lava/kelp/etc. to smelt x items) u/Wolf68k
 
 I wanted to make this Roadmap as I started figuring out what features I wanted to give this program, both for my school submission and also for the features I plan on adding after I submit my assignment, because I'll have more time for focusing on the project and not be constrained by my 8 week(ish) timeline.
 It is 3/14/26 and I will be using my commits to try to build the timeline from before I made this ROADMAP as well as keeping it up to date as much as I can. 
