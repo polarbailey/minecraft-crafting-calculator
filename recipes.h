@@ -14,6 +14,8 @@ extern bool hasBadlands;
 extern bool hasNether;
 extern bool hasBees;
 extern bool preferBambooSticks;
+extern vector<string> woodTypes;
+extern vector<string> supportedWoodTypes;
 
 enum StackSize{
     SIXTY_FOUR = 64,
@@ -46,11 +48,12 @@ public:
     bool isSmelt = false;
     bool requiresBees = false;
     bool isObtainable = false;
+    bool isWoodType = false;
 
     Recipe() : name(""), ingredientCount(0), yieldAmount(0), stackSize(SIXTY_FOUR),  // default constructor
         requiresBadlands(false), requiresBamboo(false), requiresNether(false),
         requiresSilkTouch(false), requiresStonecutter(false),
-        isSmelt(false), requiresBees(false), isObtainable(false) {}
+        isSmelt(false), requiresBees(false), isObtainable(false), isWoodType(false) {}
 
     // Member functions
     string getName() { return name; }

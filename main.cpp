@@ -295,6 +295,61 @@ int main() {
                     }
                 } while (baseCheck == -1 && recipeCheck == -1);
             
+                // Now it will see if you want a specific wood type or generic if you choose an item 
+                if (recipeCheck != -1 && recipes[recipeCheck].isWoodType) {
+                    string typeChoice;
+                    do {
+                        cout << "\nWould you like the generic recipe for " << itemName << " or a specific wood type? (generic/specific): ";
+                        cin >> typeChoice;
+                        transform(typeChoice.begin(), typeChoice.end(), typeChoice.begin(), ::tolower);
+                        if (typeChoice != "generic" && typeChoice != "g" && typeChoice != "specific" && typeChoice != "s") {
+                            cout << "Please answer with generic or specific." << endl;
+                        }
+                    } while (typeChoice != "generic" && typeChoice != "g" && typeChoice != "specific" && typeChoice != "s");
+                    if (typeChoice == "specific" || typeChoice == "s") {
+                        string woodType;
+                        bool validWood = false;
+                        do{
+                            cout << "\nWhich wood type would you like?";
+                            cin.ignore();
+                            getline (cin, woodType);
+                            transform(woodType.begin(), woodType.end(), woodType.begin(), ::tolower);
+
+                            //checking for any valid wood type first
+                            bool knownWood = false;
+                            for (string w : woodTypes) {
+                                if (w == woodType) { knownWood = true; break; }
+                            }
+
+                            if (!knownWood) {
+                                cout << "\nI'm sorry, my database is limited. You must enter the right selection." << endl; 
+                            }
+                            //checking if it's a wood type i've added yet.
+                            else {
+                                bool supported = false;
+                                for (string w : supportedWoodTypes) {
+                                    if (w == woodType) { supported = true; break; }
+                                }
+                                if (!supported) {
+                                    cout << "\nI'm sorry that type is still under construction. Please choose a different type." << endl;
+                                    cout << "Here's what are currently added: " << endl;
+                                    for (int i = 0; i < supportedWoodTypes.size(); ++i) {
+                                        cout << supportedWoodTypes[i];
+                                        if (i < supportedWoodTypes.size() - 1) cout << ", ";
+                                    }
+                                    cout << endl;
+                                }
+                                else {
+                                    validWood = true;
+                                    itemName = woodType + " " + itemName;
+                                    baseCheck = findBaseItem(itemName);
+                                    recipeCheck = findRecipe(itemName);
+                                }
+                            }
+                        } while (!validWood);
+                    }
+                }
+
                 bool validInput = false;
                 do{
                     cout << "\nHow many " << itemName << " are you crafting? ";

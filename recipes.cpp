@@ -2,6 +2,12 @@
 
 vector<Recipe> recipes;
 vector<BaseItem> baseItems;
+vector<string> woodTypes = {
+    "oak", "spruce", "birch", "jungle", "acacia", "dark oak", "crimson", "warped", "mangrove", "cherry", "pale oak"
+};
+vector<string> supportedWoodTypes = {
+    "oak"
+};
 
 void populateBaseItems(){
     BaseItem item;
@@ -263,7 +269,7 @@ void populateRecipes(){
     recipes.push_back(recipe);
     
     recipe.reset();
-    recipe.name = "Cobblestone Stiar";
+    recipe.name = "Cobblestone Stair";
     recipe.ingredients[0].name = "Cobblestone";
     recipe.ingredients[0].quantity = 1;
     recipe.ingredientCount = 1;
@@ -878,6 +884,7 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 4;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1122,6 +1129,7 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 1;
     recipe.stackSize = SINGLE;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1164,6 +1172,7 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 1;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1354,6 +1363,7 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 3;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true; // This is what lets it differentiate the wood types.
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1365,6 +1375,7 @@ void populateRecipes(){
     recipe.ingredientCount = 2;
     recipe.yieldAmount = 3;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1376,6 +1387,7 @@ void populateRecipes(){
     recipe.ingredientCount = 2;
     recipe.yieldAmount = 1;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1681,6 +1693,7 @@ void populateRecipes(){
     recipe.ingredientCount = 2;
     recipe.yieldAmount = 3;
     recipe.stackSize = SIXTEEN;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1798,6 +1811,7 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 3;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1807,6 +1821,7 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 1;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1816,6 +1831,7 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 6;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1825,6 +1841,7 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 4;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
     recipe.reset();
@@ -1834,6 +1851,17 @@ void populateRecipes(){
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 2;
     recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Wood";
+    recipe.ingredients[0].name = "Log";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipe.isWoodType = true;
     recipes.push_back(recipe);
     
 }
