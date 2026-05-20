@@ -16,6 +16,7 @@ extern bool hasBees;
 extern bool preferBambooSticks;
 extern vector<string> woodTypes;
 extern vector<string> supportedWoodTypes;
+extern bool woolFromSheep;
 
 enum StackSize{
     SIXTY_FOUR = 64,

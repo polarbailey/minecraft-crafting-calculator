@@ -13,7 +13,7 @@ The last feature is the Directory. This was a late addition to the code; I added
 
 *certain items are in different categories based on the qualifying questions you answer in the recipe converter. Those caveats are listed in their directory entry.
 
-This was created for my C++ Class Final Project, and I had a lot of fun working on it. Check out the trailer of this tool in action here: [INSERT LINK AFTER YOU UPLOAD IT] 
+This was created for my C++ Class Final Project, and I had a lot of fun working on it. Check out the trailer of this tool in action here: (https://www.youtube.com/watch?v=zywyZUkyHVk) 
 
 Combining this with your items list from a Litematica build is one of the main ways I pictured someone using this. Litematica gives you how many of each item in your build, but keeps it at their crafted end items. Using this will let you know what you need to actually acquire to craft everything you need!
 
