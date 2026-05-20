@@ -221,6 +221,10 @@ void populateBaseItems(){
     item.stackSize = SIXTY_FOUR;
     baseItems.push_back(item);
     
+    item = BaseItem();
+    item.name = "Oak Log";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
 }
 
 void populateRecipes(){
@@ -1805,16 +1809,6 @@ void populateRecipes(){
     recipes.push_back(recipe);
     
     recipe.reset();
-    recipe.name = "Wooden Door";
-    recipe.ingredients[0].name = "Planks";
-    recipe.ingredients[0].quantity = 6;
-    recipe.ingredientCount = 1;
-    recipe.yieldAmount = 3;
-    recipe.stackSize = SIXTY_FOUR;
-    recipe.isWoodType = true;
-    recipes.push_back(recipe);
-    
-    recipe.reset();
     recipe.name = "Wooden Pressure Plate";
     recipe.ingredients[0].name = "Planks";
     recipe.ingredients[0].quantity = 2;
@@ -1864,6 +1858,120 @@ void populateRecipes(){
     recipe.isWoodType = true;
     recipes.push_back(recipe);
     
+    //Oak Variants
+    recipe.reset();
+    recipe.name = "Oak Boat";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 5;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Button";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Door";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Fence";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Fence Gate";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Planks";
+    recipe.ingredients[0].name = "Oak Log";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Pressure Plate";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Sign";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Slab";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);    
+
+    recipe.reset();
+    recipe.name = "Oak Stairs";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Trapdoor";
+    recipe.ingredients[0].name = "Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Oak Wood";
+    recipe.ingredients[0].name = "Oak Log";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
 }
 
 void populateSmelts(){
@@ -2042,7 +2150,7 @@ void resolveRecipe(string itemName, unsigned int quantity, vector<string>& resul
             }
         }
         else{
-            cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again. It's possible you don't possess the prerequisites for " << itemName << "currently." << endl; 
+            cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again. It's possible you don't possess the prerequisites for " << itemName << " currently." << endl; 
         }
 
     }

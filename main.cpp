@@ -306,9 +306,21 @@ int main() {
                         cout << "\nI'm sorry, my database is limited. You must enter the right selection. Please check the spelling of " << itemName << " and try again. It's possible you don't possess the prerequisites for " << itemName << " currently." << endl;
                     }
                 } while (baseCheck == -1 && recipeCheck == -1);
+
+                // TODO: expand wood type dialogue to handle multi-material variants
+                // e.g. Door (Iron/Wood), Trapdoor (Iron/Copper/Wood), etc.
+                // If wood is selected, then ask generic or specific wood type
             
                 // Now it will see if you want a specific wood type or generic if you choose an item 
-                if (recipeCheck != -1 && recipes[recipeCheck].isWoodType) {
+                bool alreadySpecified = false;
+                for (string w : woodTypes) {
+                    if (itemName.find(w) != string::npos) {
+                        alreadySpecified = true;
+                        break;
+                    }
+                }
+
+                if (recipeCheck != -1 && recipes[recipeCheck].isWoodType && !alreadySpecified) {
                     string typeChoice;
                     do {
                         cout << "\nWould you like the generic recipe for " << itemName << " or a specific wood type? (generic/specific): ";
@@ -318,12 +330,12 @@ int main() {
                             cout << "Please answer with generic or specific." << endl;
                         }
                     } while (typeChoice != "generic" && typeChoice != "g" && typeChoice != "specific" && typeChoice != "s");
+                    cin.ignore();
                     if (typeChoice == "specific" || typeChoice == "s") {
                         string woodType;
                         bool validWood = false;
                         do{
-                            cout << "\nWhich wood type would you like?";
-                            cin.ignore();
+                            cout << "\nWhich wood type would you like?" << endl;
                             getline (cin, woodType);
                             transform(woodType.begin(), woodType.end(), woodType.begin(), ::tolower);
 
@@ -353,7 +365,14 @@ int main() {
                                 }
                                 else {
                                     validWood = true;
-                                    itemName = woodType + " " + itemName;
+                                    string lowerItemName = itemName;
+                                    transform(lowerItemName.begin(), lowerItemName.end(), lowerItemName.begin(), ::tolower);
+                                    if (lowerItemName.find("wooden") != string::npos) {
+                                        itemName = itemName.substr(7); // removes "Wooden " (7 characters including the space)
+                                        itemName = woodType + " " + itemName;
+                                    } else {
+                                        itemName = woodType + " " + itemName;
+                                    }
                                     baseCheck = findBaseItem(itemName);
                                     recipeCheck = findRecipe(itemName);
                                 }
@@ -363,6 +382,12 @@ int main() {
                 }
 
                 bool validInput = false;
+
+                /* TODO: pluralization for quantity question
+                Approach: hardcoded map of item name -> plural form
+                e.g. {"stairs", "stairs"}, {"oak slab", "oak slabs"}, 
+                {"bookshelf", "bookshelves"}, {"glass", "glass"}*/
+
                 do{
                     cout << "\nHow many " << itemName << " are you crafting? ";
                     cin >> quantity;
