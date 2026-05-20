@@ -14,7 +14,7 @@
 - [ ] v2.0 Full Web Based application with GUI included
 
 **5/10/26**
-- [ ] Fix string to wool issue. u/Wolf68k
+- ✅ *Fixed 5/10/2026* Fix string to wool issue. u/Wolf68k
 - [ ] Smelting guide (how much coal/lava/kelp/etc. to smelt x items) u/Wolf68k
 
 **3/29/26**
