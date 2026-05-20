@@ -13,6 +13,9 @@
 - [ ] v1.9 Final UI testing
 - [ ] v2.0 Full Web Based application with GUI included
 
+**5/20/26**
+- [ ] json parser to keep itself up to date with any new or changed recipes @raxleigh3981 on YouTube. 
+
 **5/10/26**
 - ✅ *Fixed 5/10/2026* Fix string to wool issue. u/Wolf68k
 - [ ] Smelting guide (how much coal/lava/kelp/etc. to smelt x items) u/Wolf68k
