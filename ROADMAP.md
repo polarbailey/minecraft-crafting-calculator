@@ -8,10 +8,13 @@
 - [ ] v1.4 Add "Decoration" Blocks (ones that don't necessarily serve a function, just for building)
 - [ ] v1.5 Add Multi-Craft option (allow for multiple crafting recipes to be converted together instead of one at a time to get total ingredient list)
 - [ ] v1.6 Work on Search Feature in the Directory
-- [ ] v1.7 Unknown currently (buffer for final pre 2.0 testing)
+- [ ] v1.7 Get JSON parser working
 - [ ] v1.8 Send to WebAssembly for testing Web-based UI
 - [ ] v1.9 Final UI testing
 - [ ] v2.0 Full Web Based application with GUI included
+
+**5/20/26**
+- [ ] json parser to keep itself up to date with any new or changed recipes @raxleigh3981 on YouTube. 
 
 **5/10/26**
 - ✅ *Fixed 5/10/2026* Fix string to wool issue. u/Wolf68k
