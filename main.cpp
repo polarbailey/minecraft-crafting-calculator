@@ -323,7 +323,7 @@ int main() {
                 if (recipeCheck != -1 && recipes[recipeCheck].isWoodType && !alreadySpecified) {
                     string typeChoice;
                     do {
-                        cout << "\nWould you like the generic recipe for " << itemName << " or a specific wood type? (generic/specific): ";
+                        cout << "\nWould you like the generic recipe for " << itemName << " or a specific wood type? (g/s): ";
                         cin >> typeChoice;
                         transform(typeChoice.begin(), typeChoice.end(), typeChoice.begin(), ::tolower);
                         if (typeChoice != "generic" && typeChoice != "g" && typeChoice != "specific" && typeChoice != "s") {
