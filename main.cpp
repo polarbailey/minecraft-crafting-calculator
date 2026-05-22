@@ -20,6 +20,7 @@ bool woolFromSheep = true;
 StackSize stackSize;
 
 bool getInput(string& input) {
+    cout << endl;
     cin >> input;
     transform(input.begin(), input.end(), input.begin(), ::tolower);
     if (input == "quit" || input == "stop" || input == "0") {
@@ -323,7 +324,14 @@ int main() {
                 if (recipeCheck != -1 && recipes[recipeCheck].isWoodType && !alreadySpecified) {
                     string typeChoice;
                     do {
-                        cout << "\nWould you like the generic recipe for " << itemName << " or a specific wood type? (g/s): ";
+                        string displayName = itemName;
+                        string lowerDisplay = displayName;
+                        transform(lowerDisplay.begin(), lowerDisplay.end(), lowerDisplay.begin(), ::tolower);
+                        if (lowerDisplay.find("wooden") != string::npos) {
+                            displayName = displayName.substr(7); // removes "Wooden "
+                        }
+                        cout << "\nWould you like the generic recipe for the " << displayName << " or a specific wood type? (g/s): ";
+                        cout << endl;
                         cin >> typeChoice;
                         transform(typeChoice.begin(), typeChoice.end(), typeChoice.begin(), ::tolower);
                         if (typeChoice != "generic" && typeChoice != "g" && typeChoice != "specific" && typeChoice != "s") {
