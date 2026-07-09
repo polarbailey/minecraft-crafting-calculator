@@ -17,7 +17,7 @@ vector<string> supportedWoodTypes = {
     "mangrove",
     "cherry",
     "bamboo",
-
+    "pale oak"
 };
 
 void populateBaseItems(){
@@ -281,6 +281,10 @@ void populateBaseItems(){
     item.stackSize = SIXTY_FOUR;
     baseItems.push_back(item);
 
+    item = BaseItem();
+    item.name = "Pale Oak Log";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
 }
 
 void populateRecipes(){
@@ -3170,6 +3174,120 @@ void populateRecipes(){
     recipe.stackSize = SIXTY_FOUR;
     recipes.push_back(recipe);
 
+    // Pale Oak Variants
+    recipe.reset();
+    recipe.name = "Pale Oak Boat";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 5;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Button";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Door";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Fence";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Fence Gate";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Planks";
+    recipe.ingredients[0].name = "Pale Oak Log";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Pressure Plate";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Sign";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Slab";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);    
+
+    recipe.reset();
+    recipe.name = "Pale Oak Stairs";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Trapdoor";
+    recipe.ingredients[0].name = "Pale Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Pale Oak Wood";
+    recipe.ingredients[0].name = "Pale Oak Log";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
 }
 
 void populateSmelts(){
