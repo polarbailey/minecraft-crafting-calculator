@@ -2,7 +2,7 @@
 
 ***VERSION ITENERARY POST V1.0***
 - [x] v1.0 Final School Submission *Released 5/10/26*
-- [ ] v1.1 Add all wood variants (oak, birch, crimson, etc.)
+- [x] v1.1 Add all wood variants (oak, birch, crimson, etc.) *Released 7/8/2026*
 - [ ] v1.2 Add Stone Variants (Blackstone and Deepslate)
 - [ ] v1.3 Add Extra Stone (Granite, andesite, diorite, etc.)
 - [ ] v1.4 Add "Decoration" Blocks (ones that don't necessarily serve a function, just for building)
@@ -17,7 +17,8 @@
 - [x] *added 3/9/26* Add an artificial delay for calculations (studies show it produces higher confidence in results)
 - [x] *added 3/9/26* convert to 3 full branches: 1 for school, 1 for development after school is finished, and 1 official release
 - [x] *added 3/14/26* Add a Directory so users can know what items are used in the program
-- [ ] Update from just "wood, stone, cobble" to actual wood and stone types including granite, andesite, etc. *(Post School Feature)*
+- [x] Update from just "wood" to actual wood *(Post School Feature)* *Completed 7/8/2026*
+- [ ] Update from just "stone, cobble etc." to actual stone types including granite, andesite, etc. *(Post School Feature)*
 
  **3/10/26**
  - [x] *added 3/12/26* Figure out all conditional settings to allow user to change (Already have stonecutter, silk touch, and badlands)
