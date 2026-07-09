@@ -12,6 +12,9 @@ vector<string> supportedWoodTypes = {
     "jungle",
     "acacia",
     "dark oak",
+    "crimson",
+    "warped",
+
 };
 
 void populateBaseItems(){
@@ -157,7 +160,6 @@ void populateBaseItems(){
     item.name = "Log";
     item.stackSize = SIXTY_FOUR;
     baseItems.push_back(item);
-    /*Will eventually be expanded to all wood types*/
 
     item = BaseItem();
     item.name = "Nether Quartz";
@@ -253,6 +255,16 @@ void populateBaseItems(){
 
     item = BaseItem();
     item.name = "Dark Oak Log";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+
+    item = BaseItem();
+    item.name = "Crimson Stem";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+
+    item = BaseItem();
+    item.name = "Warped Stem";
     item.stackSize = SIXTY_FOUR;
     baseItems.push_back(item);
 }
@@ -2572,6 +2584,227 @@ void populateRecipes(){
     recipe.reset();
     recipe.name = "Dark Oak Wood";
     recipe.ingredients[0].name = "Dark Oak Log";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    // Nether Variants
+
+    recipe.reset();
+    recipe.name = "Crimson Button";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Door";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Fence";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Fence Gate";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Planks";
+    recipe.ingredients[0].name = "Crimson Stem";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Pressure Plate";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Sign";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Slab";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);    
+
+    recipe.reset();
+    recipe.name = "Crimson Stairs";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Trapdoor";
+    recipe.ingredients[0].name = "Crimson Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Crimson Hyphae";
+    recipe.ingredients[0].name = "Crimson Stem";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Boat";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 5;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Button";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Door";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Fence";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Fence Gate";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Planks";
+    recipe.ingredients[0].name = "Warped Stem";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Pressure Plate";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Sign";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Slab";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);    
+
+    recipe.reset();
+    recipe.name = "Warped Stairs";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Trapdoor";
+    recipe.ingredients[0].name = "Warped Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Warped Hyphae";
+    recipe.ingredients[0].name = "Warped Stem";
     recipe.ingredients[0].quantity = 4;
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 3;
