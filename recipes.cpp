@@ -3,12 +3,13 @@
 vector<Recipe> recipes;
 vector<BaseItem> baseItems;
 vector<string> woodTypes = {
-    "oak", "spruce", "birch", "jungle", "acacia", "dark oak", "crimson", "warped", "mangrove", "cherry", "pale oak"
+    "oak", "spruce", "birch", "jungle", "acacia", "dark oak", "crimson", "warped", "mangrove", "cherry", "pale oak", "bamboo"
 };
 vector<string> supportedWoodTypes = {
     "oak", 
     "spruce",
-    "birch"
+    "birch",
+    "jungle",
 };
 
 void populateBaseItems(){
@@ -237,6 +238,11 @@ void populateBaseItems(){
     item.name = "Birch Log";
     item.stackSize = SIXTY_FOUR;
     baseItems.push_back(item); 
+
+    item = BaseItem();
+    item.name = "Jungle Log";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
 }
 
 void populateRecipes(){
@@ -2209,6 +2215,120 @@ void populateRecipes(){
     recipe.reset();
     recipe.name = "Birch Wood";
     recipe.ingredients[0].name = "Birch Log";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+        recipe.reset();
+    recipe.name = "Jungle Boat";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 5;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Button";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Door";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Fence";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Fence Gate";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Planks";
+    recipe.ingredients[0].name = "Jungle Log";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Pressure Plate";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Sign";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Slab";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);    
+
+    recipe.reset();
+    recipe.name = "Jungle Stairs";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Trapdoor";
+    recipe.ingredients[0].name = "Jungle Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Jungle Wood";
+    recipe.ingredients[0].name = "Jungle Log";
     recipe.ingredients[0].quantity = 4;
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 3;
