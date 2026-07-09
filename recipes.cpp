@@ -2698,15 +2698,6 @@ void populateRecipes(){
     recipes.push_back(recipe);
 
     recipe.reset();
-    recipe.name = "Warped Boat";
-    recipe.ingredients[0].name = "Warped Planks";
-    recipe.ingredients[0].quantity = 5;
-    recipe.ingredientCount = 1;
-    recipe.yieldAmount = 1;
-    recipe.stackSize = SINGLE;
-    recipes.push_back(recipe);
-
-    recipe.reset();
     recipe.name = "Warped Button";
     recipe.ingredients[0].name = "Warped Planks";
     recipe.ingredients[0].quantity = 1;
