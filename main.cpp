@@ -381,6 +381,30 @@ int main() {
                                     } else {
                                         itemName = woodType + " " + itemName;
                                     }
+                                    if (woodType == "bamboo") {
+                                        string lowerItemName = itemName;
+                                        transform(lowerItemName.begin(), lowerItemName.end(), lowerItemName.begin(), ::tolower);
+                                        if (lowerItemName.find("slab") != string::npos || lowerItemName.find("stair") != string::npos) {
+                                            string mosaicAnswer;
+                                            do {
+                                                cout << "\nDo you want regular or mosaic " << itemName << "? (r/m): ";
+                                                cin >> mosaicAnswer;
+                                                transform(mosaicAnswer.begin(), mosaicAnswer.end(), mosaicAnswer.begin(), ::tolower);
+                                                    if (mosaicAnswer != "regular" && mosaicAnswer != "mosaic" && mosaicAnswer != "r" && mosaicAnswer != "m") {
+                                                        cout << "Please enter regular or mosaic." << endl;
+                                                    }
+                                            } while (mosaicAnswer != "regular" && mosaicAnswer != "mosaic" && mosaicAnswer != "r" && mosaicAnswer != "m");
+                                            if (mosaicAnswer == "mosaic" || mosaicAnswer == "m") {
+                                                string lowerItem = itemName;
+                                                transform(lowerItem.begin(), lowerItem.end(), lowerItem.begin(), ::tolower);
+                                                if (lowerItem.find("slab") != string::npos) {
+                                                    itemName = "Bamboo Mosaic Slab";
+                                                } else {
+                                                    itemName = "Bamboo Mosaic Stair";
+                                                }
+                                            }
+                                        }
+                                    }
                                     baseCheck = findBaseItem(itemName);
                                     recipeCheck = findRecipe(itemName);
                                 }
