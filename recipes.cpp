@@ -10,6 +10,8 @@ vector<string> supportedWoodTypes = {
     "spruce",
     "birch",
     "jungle",
+    "acacia",
+    "dark oak",
 };
 
 void populateBaseItems(){
@@ -241,6 +243,16 @@ void populateBaseItems(){
 
     item = BaseItem();
     item.name = "Jungle Log";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+
+    item = BaseItem();
+    item.name = "Acacia Log";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+
+    item = BaseItem();
+    item.name = "Dark Oak Log";
     item.stackSize = SIXTY_FOUR;
     baseItems.push_back(item);
 }
@@ -2221,7 +2233,8 @@ void populateRecipes(){
     recipe.stackSize = SIXTY_FOUR;
     recipes.push_back(recipe);
 
-        recipe.reset();
+    // Jungle Variants
+    recipe.reset();
     recipe.name = "Jungle Boat";
     recipe.ingredients[0].name = "Jungle Planks";
     recipe.ingredients[0].quantity = 5;
@@ -2329,6 +2342,236 @@ void populateRecipes(){
     recipe.reset();
     recipe.name = "Jungle Wood";
     recipe.ingredients[0].name = "Jungle Log";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    // Acacia Variants
+    recipe.reset();
+    recipe.name = "Acacia Boat";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 5;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Button";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Door";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Fence";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Fence Gate";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Planks";
+    recipe.ingredients[0].name = "Acacia Log";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Pressure Plate";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Sign";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Slab";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);    
+
+    recipe.reset();
+    recipe.name = "Acacia Stairs";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Trapdoor";
+    recipe.ingredients[0].name = "Acacia Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Acacia Wood";
+    recipe.ingredients[0].name = "Acacia Log";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    // Dark Oak Variants
+    recipe.reset();
+    recipe.name = "Dark Oak Boat";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 5;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Button";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Door";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Fence";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Fence Gate";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Planks";
+    recipe.ingredients[0].name = "Dark Oak Log";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Pressure Plate";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Sign";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Slab";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);    
+
+    recipe.reset();
+    recipe.name = "Dark Oak Stairs";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Trapdoor";
+    recipe.ingredients[0].name = "Dark Oak Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Dark Oak Wood";
+    recipe.ingredients[0].name = "Dark Oak Log";
     recipe.ingredients[0].quantity = 4;
     recipe.ingredientCount = 1;
     recipe.yieldAmount = 3;
