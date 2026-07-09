@@ -3,7 +3,7 @@
 vector<Recipe> recipes;
 vector<BaseItem> baseItems;
 vector<string> woodTypes = {
-    "oak", "spruce", "birch", "jungle", "acacia", "dark oak", "crimson", "warped", "mangrove", "cherry", "pale oak", "bamboo"
+    "oak", "spruce", "birch", "jungle", "acacia", "dark oak", "crimson", "warped", "mangrove", "cherry", "bamboo", "pale oak", 
 };
 vector<string> supportedWoodTypes = {
     "oak", 
@@ -14,7 +14,8 @@ vector<string> supportedWoodTypes = {
     "dark oak",
     "crimson",
     "warped",
-
+    "mangrove",
+    
 };
 
 void populateBaseItems(){
@@ -265,6 +266,11 @@ void populateBaseItems(){
 
     item = BaseItem();
     item.name = "Warped Stem";
+    item.stackSize = SIXTY_FOUR;
+    baseItems.push_back(item);
+
+    item = BaseItem();
+    item.name = "Mangrove Log";
     item.stackSize = SIXTY_FOUR;
     baseItems.push_back(item);
 }
@@ -2801,6 +2807,122 @@ void populateRecipes(){
     recipe.yieldAmount = 3;
     recipe.stackSize = SIXTY_FOUR;
     recipes.push_back(recipe);
+
+    // Mangrove Variants
+    recipe.reset();
+    recipe.name = "Mangrove Boat";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 5;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SINGLE;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Button";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Door";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Fence";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 2;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Fence Gate";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 4;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Planks";
+    recipe.ingredients[0].name = "Mangrove Log";
+    recipe.ingredients[0].quantity = 1;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Pressure Plate";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 2;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 1;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Sign";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredients[1].name = "Stick";
+    recipe.ingredients[1].quantity = 1;
+    recipe.ingredientCount = 2;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTEEN;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Slab";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 3;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 6;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);    
+
+    recipe.reset();
+    recipe.name = "Mangrove Stairs";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 4;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Trapdoor";
+    recipe.ingredients[0].name = "Mangrove Planks";
+    recipe.ingredients[0].quantity = 6;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 2;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+
+    recipe.reset();
+    recipe.name = "Mangrove Wood";
+    recipe.ingredients[0].name = "Mangrove Log";
+    recipe.ingredients[0].quantity = 4;
+    recipe.ingredientCount = 1;
+    recipe.yieldAmount = 3;
+    recipe.stackSize = SIXTY_FOUR;
+    recipes.push_back(recipe);
+    
 }
 
 void populateSmelts(){
